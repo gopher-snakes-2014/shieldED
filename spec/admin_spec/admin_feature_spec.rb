@@ -1,5 +1,3 @@
-
-
 feature "Admin" do
   xscenario 'an admin visits admin page' do
     @incidents = ["a","b","c","d","e","f","g"]
