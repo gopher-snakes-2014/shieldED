@@ -1,0 +1,5 @@
+<h2>Record Event</h2>
+<%= form_for @event, url: { action: "create" }, html: { class: "new_event" } do |f| %>
+	<%= f.text_area :details, size: "60x12" %>
+	<%= f.submit "Submit" %>
+<% end %>

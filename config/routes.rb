@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
 
-  get 'events/new' => 'events#new'
+  get 'events/new' => 'events#new', as: "new_event"
+  post 'events/new' => 'events#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

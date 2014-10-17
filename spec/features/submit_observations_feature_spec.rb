@@ -3,8 +3,8 @@ feature "Events" do
     visit '/events/new'
     expect(page).to have_content('Record Event')
 
-    within("new_event") do
-    	fill_in "details", with: "I saw mommy kissing santa claus!"
+    within(".new_event") do
+    	fill_in "event_details", with: "I saw mommy kissing santa claus!"
     	click_button 'Submit'
     end
 
