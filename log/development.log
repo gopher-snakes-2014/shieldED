@@ -108,3 +108,11 @@ ActionView::Template::Error (No route matches {:action=>"process_login", :contro
   Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
   Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
   Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.0ms)
+  [1m[36m (130.3ms)[0m  [1mDROP DATABASE IF EXISTS "ShieldED_test"[0m
+  [1m[35m (260.4ms)[0m  CREATE DATABASE "ShieldED_test" ENCODING = 'unicode'
+  [1m[36mSQL (4.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (18.5ms)[0m  CREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password_hash" character varying(255), "level" character varying(255)) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.7ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141017001909')
