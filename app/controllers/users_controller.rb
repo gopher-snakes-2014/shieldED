@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     @users = User.all
     @user = User.new
@@ -31,11 +32,12 @@ class UsersController < ApplicationController
   end
 
   def parent_dashboard
+    @event = Event.new
   end
 
   def student_dashboard
+    @event = Event.new
   end
-
 
   def logout
     session[:current_user_id] = nil
@@ -59,26 +61,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  # def edit
-  #   @user = User.find params[:id]
-  # end
-
-  # def update
-  #   @user = User.find params[:id]
-  #   if @user.update_attributes(user_params)
-  #     redirect_to user_path(@user)
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  # def destroy
-  #   @user_to_destroy = User.find params[:id]
-  #   @user_to_destroy.destroy
-  #   redirect_to root_path
-  # end
-
 
   private
 
