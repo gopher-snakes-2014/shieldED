@@ -1,5 +1,65 @@
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-  [1m[35m (0.1ms)[0m  ROLLBACK
-  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
-Started GET "/admin/index/" for 127.0.0.1 at 2014-10-16 18:14:09 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 1.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Admin' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("level", "password_hash", "username") VALUES ($1, $2, $3) RETURNING "id"[0m  [["level", "admin"], ["password_hash", "1234"], ["username", "Admin"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#index as HTML
+Completed 200 OK in 71ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/login" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#process_login as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Admin", "password_hash"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'Admin' LIMIT 1[0m
+Redirected to http://www.example.com/admins/dashboard.12
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+Started GET "/admins/dashboard.12" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#admin_dashboard as 
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Parent' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("level", "password_hash", "username") VALUES ($1, $2, $3) RETURNING "id"  [["level", "parent"], ["password_hash", "1234"], ["username", "Parent"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/login" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#process_login as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Parent", "password_hash"=>"[FILTERED]", "commit"=>"login"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'Parent' LIMIT 1
+Redirected to http://www.example.com/parents/dashboard.13
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/parents/dashboard.13" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#parent_dashboard as 
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Student' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("level", "password_hash", "username") VALUES ($1, $2, $3) RETURNING "id"[0m  [["level", "student"], ["password_hash", "1234"], ["username", "Student"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#index as HTML
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/login" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#process_login as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"Student", "password_hash"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'Student' LIMIT 1[0m
+Redirected to http://www.example.com/students/dashboard.14
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/students/dashboard.14" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#student_dashboard as 
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-10-17 12:28:40 -0700
+Processing by UsersController#index as HTML
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
