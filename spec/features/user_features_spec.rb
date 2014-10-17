@@ -16,6 +16,7 @@ feature 'user management' do
       click_button "login"
     expect(page).to have_content('Parent')
     expect(page).to_not have_content('Admin')
+    expect(page).to have_content('Record Event')
   end
 
    scenario "Redirects to student dashboard page based on student credentials" do
@@ -26,6 +27,7 @@ feature 'user management' do
       click_button "login"
     expect(page).to have_content('Student')
     expect(page).to_not have_content('Admin')
+    expect(page).to have_content('Record Event')
   end
 
 end

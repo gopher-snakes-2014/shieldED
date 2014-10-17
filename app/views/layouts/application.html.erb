@@ -12,7 +12,9 @@
   </head>
 
   <body>
-
+    <% if signed_in? %>
+    <%= link_to("logout",logout_path) %>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
