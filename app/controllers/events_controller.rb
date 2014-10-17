@@ -5,7 +5,6 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		p params
 		Event.create(details: params[:event][:details])
 	end
 end
