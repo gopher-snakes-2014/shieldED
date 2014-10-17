@@ -2,7 +2,7 @@
 
 feature "Admin" do
   scenario 'an admin visits admin page' do
-    # @incidents = ["a","b","c","d","e","f","g"]
+    # @incidents = ["a","b","c","d","e","f","g"] add these when merged with models
     # @incidents.first.date = "2013-19-22"
     visit "/admins/dashboard"
 
