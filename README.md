@@ -33,4 +33,6 @@ Final Project Repo for ShieldED
 ##MVP User Stories
 * Student can report an incident
 * Parent can report an incident
-* Admin can view everything
+* Admin can view all incidents
+* Admin can view a specific incident
+* Admin can view a count of all incidents
