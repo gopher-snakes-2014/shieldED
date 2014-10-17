@@ -1,0 +1,18 @@
+<h1>ShieldED HomePage</h1>
+
+  <div class="login">
+    <h2>Login</h2>
+      <%= form_tag :action => 'process_login' do %>
+        <%= label_tag(:username, "Username: ") %>
+        <%= text_field_tag(:username) %>
+      <br>
+        <%= label_tag(:password_hash, "Password: ") %>
+        <%= text_field_tag(:password_hash) %>
+      </p>
+      <p>
+        <p class = "error"><%=session[:error]%></p>
+      </div>
+      <br>
+        <%= submit_tag("Login") %>
+    <% end %>
+  </div>
