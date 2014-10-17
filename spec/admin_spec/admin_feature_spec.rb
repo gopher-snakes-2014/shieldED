@@ -1,10 +1,10 @@
 feature "Admin" do
-  xscenario 'an admin visits admin page' do
-    @incidents = ["a","b","c","d","e","f","g"]
-    @incidents.fist.date = "2013-19-22"
-    visit "/admin/index"
 
-    expect(page).to have_content('Incidents')
-    expect(page).to have_content("#{@incidents.first.date}")
+  scenario 'an admin visits admin page' do
+    # @incidents = ["a","b","c","d","e","f","g"] add these when merged with models
+    # @incidents.first.date = "2013-19-22"
+    visit "users/admins/dashboard"
+    expect(page).to have_content('Report Detail')
+    expect(page).to have_content("Recent Reports")
   end
 end
