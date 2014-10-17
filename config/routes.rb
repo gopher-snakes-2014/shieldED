@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
+  resources :users
+
+  post '/users/login'           => 'users#process_login',      :as => 'process_login'
+  get  '/logout'                => 'users#logout',             :as => 'logout'
+
+  root 'users#index'
+
+  get '/admins/dashboard'       => 'users#admin_dashboard',      :as => 'admin_dashboard'
+  get '/parents/dashboard'       => 'users#parent_dashboard',      :as => 'parent_dashboard'
+  get '/students/dashboard'       => 'users#student_dashboard',      :as => 'student_dashboard'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+
 
   get 'events/new' => 'events#new', as: "new_event"
   post 'events/new' => 'events#create'
