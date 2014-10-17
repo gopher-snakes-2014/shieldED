@@ -1,5 +1,3 @@
-require "rails_helper"
-
 RSpec.describe UsersController, :type => :controller do
   describe 'users-controller' do
     it 'login page exists' do

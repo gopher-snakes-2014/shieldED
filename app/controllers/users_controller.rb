@@ -8,25 +8,34 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user == nil
       session[:error] = "Invalid Username"
-      redirect_to login_path(@user)
+      redirect_to root_path
     elsif @user.password_hash != params[:password_hash]
       session[:error] = "Invalid Password"
-      redirect_to login_path(@user)
-    elsif @user.username == "Admin"
-      session[:level] = "Admin"
-      redirect_to admin_dashboard
-    elsif @user.username == "Parent"
-      session[:level] = "Admin"
-      redirect_to admin_dashboard
-    elsif @user.username == "Student"
-      session[:level] = "Admin"
-      redirect_to admin_dashboard
-    # else
-    #   session[:current_user_id] = @user.id
-    #   session[:error] = nil
-    #   redirect_to root_path(@user)
+      redirect_to root_path
+    else
+      session[:error] = nil
+      if @user.username == "Admin"
+        session[:current_user_id] = @user.id
+        redirect_to admin_dashboard_path(@user)
+      elsif @user.username == "Parent"
+        session[:current_user_id] = @user.id
+        redirect_to parent_dashboard_path(@user)
+      elsif @user.username == "Student"
+        session[:current_user_id] = @user.id
+        redirect_to student_dashboard_path(@user)
+      end
     end
   end
+
+  def admin_dashboard
+  end
+
+  def parent_dashboard
+  end
+
+  def student_dashboard
+  end
+
 
   def logout
     session[:current_user_id] = nil
