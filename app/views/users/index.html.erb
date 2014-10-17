@@ -8,11 +8,8 @@
       <br>
         <%= label_tag(:password_hash, "Password: ") %>
         <%= text_field_tag(:password_hash) %>
-      </p>
-      <p>
         <p class = "error"><%=session[:error]%></p>
-      </div>
       <br>
-        <%= submit_tag("Login") %>
+        <%= submit_tag("login") %>
     <% end %>
   </div>
