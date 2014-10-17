@@ -8,4 +8,8 @@ describe Event do
     it { should respond_to :created_at }
     it { should respond_to :updated_at }
   end
+
+  describe "validations" do
+    it { should validate_presence_of :details }
+  end
 end
