@@ -1,4 +1,4 @@
-<div class="container">
+<div class="admin-container">
      <div class="row">
     <div class="large-7 columns">
       <h1>Admin Report Detail</h1>
@@ -42,7 +42,7 @@
 
   <div class="row">
     <div class="large-4 columns">
-      <div class = 'placehold'>
+      <div class = 'admin-placehold'>
       <h4>Recent Reports<h4>
         <ul>
           <%@latest.each do |event|%>
@@ -56,21 +56,22 @@
     </div>
 
     <div class="large-8 columns">
-      <div class = 'placehold2'>
-        <div class = "form">
+      <div class = 'admin-placehold2'>
+        <div class = "admin-form">
         <%= form_tag search_path, :method => 'get' do %>
           <p>
             <%= text_area_tag :search, params[:search] %>
             <%= submit_tag "Search Reports",:id => "search", :name => nil %>
           </p>
         <% end %>
-          <p>
+          <div>
             <%if @results%>
             <%@results.each do |result|%>
             <p><%=result.details%></p>
-            <p><%=result.submitter%>
+            <p><%=result.submitter%></p>
             <%end%>
             <%end%>
+          </div>
       </div>
       </div>
     </div>

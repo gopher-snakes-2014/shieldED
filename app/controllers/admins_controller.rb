@@ -5,14 +5,13 @@ class AdminsController < ApplicationController
       @events = Event.all
       @total = Event.count
       @latest = Event.last(5)
+      @results = []
+      @results.clear
   end
 
   def search
     @latest = Event.last(5)
     @results = Event.search(params[:search])
-    p "$$$$$$$$$$$$$$$$$"
-    p @results
-    p "*$*$*$*$*$*$*$*$*"
     render :admin_dashboard
   end
 end

@@ -15,14 +15,16 @@
  *= require foundation_and_overrides
 
  */
-.row h1{
-  color: white;
-}
-.container {
+
+.admin-container {
   background-color: #3A3A3B;
 }
 
-.placehold {
+.admin-container h1 {
+  color: white;
+}
+
+.admin-placehold {
   height: 400px;
   border-style: solid;
   border-color: Black;
@@ -32,11 +34,11 @@
   padding-top: 30px;
 }
 
-.placehold li{
+.admin-placehold li{
   list-style: none;
 }
 
-.placehold2 {
+.admin-placehold2 {
   height: 400px;
   border-style: solid;
   border-color: Black;
@@ -44,7 +46,7 @@
   background-color: #CFCFCF;
 }
 
-.form {
+.admin-form {
   height: 40%;
   width: 50%;
   margin: 0 auto;
@@ -55,3 +57,20 @@ footer p {
   color: white;
 }
 
+.user-login {
+  width: 30%;
+  height: 65%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10%;
+  border-style: solid;
+  border-color: 5px Navy;
+  border-radius: 10%;
+  background-color: #B3D8CB;
+  padding-top: 3%;
+}
+
+.user-login form {
+  width: 35%;
+  margin: 0 auto;
+}
