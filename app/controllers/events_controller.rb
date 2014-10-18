@@ -13,4 +13,8 @@ class EventsController < ApplicationController
     params.require(:event).permit(:details, :submitter, :offender, :location, :date, :event_photo)
   end
 
+  def show
+    @event = Event.find params[:id]
+  end
+
 end
