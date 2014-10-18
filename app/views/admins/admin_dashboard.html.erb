@@ -1,4 +1,4 @@
-
+<div class="container">
      <div class="row">
     <div class="large-7 columns">
       <h1>Admin Report Detail</h1>
@@ -14,13 +14,24 @@
    </div>
 
 
-
-
-
   <div class="row">
     <div class="large-12 columns">
     <div id="slider">
-      <img src="http://placehold.it/1000x400&text=[ img 1 ]"/>
+     <ul class="orbit" data-orbit>
+       <li>
+         <%=image_tag("graph1.png" )%>
+           <img height = "15">
+       </li>
+       <li class="active">
+         <%=image_tag("bar-char.png" )%>
+           <img height = "15">
+       </li>
+       <li>
+         <%=image_tag("sample.png" )%>
+           <img height = "15">
+       </li>
+     </ul>
+
     </div>
 
     <hr/>
@@ -33,14 +44,27 @@
     <div class="large-4 columns">
       <div class = 'placehold'>
       <h4>Recent Reports<h4>
-
+        <ul>
+          <%@latest.each do |event|%>
+            <li>
+              <a href><%=event.date%> : <%=event.details[0..15]%></a>
+            </li>
+          <%end%>
+        </ul>
       </div>
 
     </div>
 
     <div class="large-8 columns">
       <div class = 'placehold2'>
-
+        <div class = "form">
+        <%= form_tag search_path, :method => 'get' do %>
+          <p>
+            <%= text_area_tag :search, params[:search] %>
+            <%= submit_tag "Search Reports", :name => nil %>
+          </p>
+        <% end %>
+      </div>
       </div>
     </div>
 
@@ -53,14 +77,14 @@
     <div class="large-12 columns">
 
       <div class="panel">
-        <h4>Get in touch!</h4>
+        <h4>Alert Support Team.</h4>
 
         <div class="row">
           <div class="large-9 columns">
-            <p>We'd love to hear from you, you attractive person you.</p>
+
           </div>
           <div class="large-3 columns">
-            <a href="#" class="radius button right">Contact Us</a>
+            <a href="mailto:guidance.counselor@gmail.com?Subject=Help%20Student" class="radius button right"> Send Email</a>
           </div>
         </div>
       </div>
@@ -75,7 +99,7 @@
       <hr/>
       <div class="row">
         <div class="large-6 columns">
-          <p>© Copyright no one at all. Go to town.</p>
+          <p>© Team Smashing. Andrew. Ruskin. Anders.</p>
         </div>
         <div class="large-6 columns">
           <ul class="inline-list right">
@@ -88,3 +112,4 @@
       </div>
     </div>
   </footer>
+</div>
