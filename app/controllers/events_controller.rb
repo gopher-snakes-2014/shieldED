@@ -7,15 +7,22 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		Event.create( event_params )
+	@event = Event.create( event_params )
+    # if @event.save
+    #   redirect_to @event
+    # else
+    #   render :new
+    # end
 	end
-
-  def event_params
-    params.require(:event).permit(:details, :date, :location, :offender, :event_photo, :submitter).merge(user_id: current_user.id)
-  end
 
   def show
     @event = Event.find params[:id]
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:details, :date, :location, :offender, :event_photo, :submitter).merge(user_id: current_user.id)
   end
 
 end

@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20141018023029) do
 
   create_table "events", force: true do |t|
     t.string   "details"
-    t.string   "submitter"
     t.string   "offender"
     t.string   "location"
     t.date     "date"
@@ -28,6 +27,8 @@ ActiveRecord::Schema.define(version: 20141018023029) do
     t.string   "event_photo_content_type"
     t.integer  "event_photo_file_size"
     t.datetime "event_photo_updated_at"
+    t.string   "submitter"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

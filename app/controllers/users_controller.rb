@@ -20,6 +20,8 @@ class UsersController < ApplicationController
         redirect_to admin_dashboard_path(@user)
       elsif @user.username == "Parent"
         set_session
+        p "********************************************************************"
+        p @user
         redirect_to parent_dashboard_path(@user)
       elsif @user.username == "Student"
         set_session
@@ -32,7 +34,11 @@ class UsersController < ApplicationController
   end
 
   def parent_dashboard
+    # p @user
+    # @user = User.find params[:id]
     @event = Event.new
+    @events = Event.all
+    # @events = Event.where(user_id: @user.id)
   end
 
   def student_dashboard
@@ -48,24 +54,24 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  def new
-    @user = User.new
-  end
+  # def new
+  #   @user = User.new
+  # end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      set_session
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     set_session
+  #     redirect_to user_path(@user)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   private
 
-  def user_params
-    params.require(:user).permit(:username, :password_hash, :level)
-  end
+  # def user_params
+  #   params.require(:user).permit(:username, :password_hash, :level)
+  # end
 
 end
