@@ -3,7 +3,9 @@ class Event < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where("details LIKE ?", ["%#{search}%"])
+      p search
+      where("details LIKE ?", "%#{search}%")
+
     else
       find(:all)
     end

@@ -61,9 +61,16 @@
         <%= form_tag search_path, :method => 'get' do %>
           <p>
             <%= text_area_tag :search, params[:search] %>
-            <%= submit_tag "Search Reports", :name => nil %>
+            <%= submit_tag "Search Reports",:id => "search", :name => nil %>
           </p>
         <% end %>
+          <p>
+            <%if @results%>
+            <%@results.each do |result|%>
+            <p><%=result.details%></p>
+            <p><%=result.submitter%>
+            <%end%>
+            <%end%>
       </div>
       </div>
     </div>

@@ -8,8 +8,11 @@ class AdminsController < ApplicationController
   end
 
   def search
+    @latest = Event.last(5)
     @results = Event.search(params[:search])
+    p "$$$$$$$$$$$$$$$$$"
     p @results
     p "*$*$*$*$*$*$*$*$*"
+    render :admin_dashboard
   end
 end
