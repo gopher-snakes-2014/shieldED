@@ -31,3 +31,31 @@ feature 'user management' do
   end
 
 end
+
+feature 'Student Dashboard' do
+  scenario "Gives a student the option to upload a photo" do
+    Student1 = User.create(username: "Student", password_hash: "1234", level: "student")
+    visit root_path
+      fill_in "username", with: "Student"
+      fill_in "password_hash", with: "1234"
+      click_button "login"
+    expect(page).to have_content('Upload a Photo')
+    expect(page).to_not have_content('Admin')
+    expect(page).to have_content('Record Event')
+  end
+end
+
+feature 'Parent Dashboard' do
+  scenario "Gives a parent the option to upload a photo" do
+    Student1 = User.create(username: "Parent", password_hash: "1234", level: "parent")
+    visit root_path
+      fill_in "username", with: "Parent"
+      fill_in "password_hash", with: "1234"
+      click_button "login"
+    expect(page).to have_content('Upload a Photo')
+    expect(page).to_not have_content('Admin')
+    expect(page).to have_content('Record Event')
+  end
+end
+
+
