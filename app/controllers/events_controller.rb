@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include ApplicationHelper
 
 	def new
 		@event = Event.new
@@ -12,6 +13,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:details, :date, :location, :offender, :submitter)
+    params.require(:event).permit(:details, :date, :location, :offender, :submitter).merge(user_id: current_user.id)
   end
 end
