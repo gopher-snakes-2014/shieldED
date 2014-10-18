@@ -7,6 +7,7 @@ describe Event do
     it { should respond_to :date }
     it { should respond_to :created_at }
     it { should respond_to :updated_at }
+    it { should respond_to :event_photo }
   end
 
   describe "validations" do
