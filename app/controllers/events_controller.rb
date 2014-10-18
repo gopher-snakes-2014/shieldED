@@ -6,6 +6,12 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		Event.create(details: params[:event][:details])
+		Event.create(event_params)
 	end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:details, :date, :location, :offender, :submitter)
+  end
 end
