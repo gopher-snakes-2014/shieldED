@@ -32,7 +32,6 @@ end
 
 gem 'foundation-rails'
 
-
 gem 'pry'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -47,9 +46,8 @@ gem 'pry'
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-	gem 'rspec-rails'
-	gem 'shoulda-matchers'
-	gem 'capybara'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 
