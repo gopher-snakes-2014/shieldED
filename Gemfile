@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# Add Paperclip for image upload
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use postgresql as the database for Active Record
