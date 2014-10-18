@@ -8,21 +8,21 @@ class UsersController < ApplicationController
   def process_login
     @user = User.find_by(username: params[:username])
     if @user == nil
-      session[:error] = "Invalid Username"
+      username_error
       redirect_to root_path
     elsif @user.password_hash != params[:password_hash]
-      session[:error] = "Invalid Password"
+      password_error
       redirect_to root_path
     else
-      session[:error] = nil
+      clear_session_error
       if @user.username == "Admin"
-        session[:current_user_id] = @user.id
+        set_session
         redirect_to admin_dashboard_path(@user)
       elsif @user.username == "Parent"
-        session[:current_user_id] = @user.id
+        set_session
         redirect_to parent_dashboard_path(@user)
       elsif @user.username == "Student"
-        session[:current_user_id] = @user.id
+        set_session
         redirect_to student_dashboard_path(@user)
       end
     end
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:current_user_id] = @user.id
+      set_session
       redirect_to user_path(@user)
     else
       render :new
