@@ -7,12 +7,8 @@ class EventsController < ApplicationController
 	end
 
 	def create
-	@event = Event.create( event_params )
-    # if @event.save
-    #   redirect_to @event
-    # else
-    #   render :new
-    # end
+	 @event = Event.create( event_params )
+   render "acknowledgement"
 	end
 
   def show
