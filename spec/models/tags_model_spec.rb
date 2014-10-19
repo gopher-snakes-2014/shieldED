@@ -8,7 +8,7 @@ describe Tag do
   end
 
   describe "associations" do
-    it { should belong_to :event_tags }
-    it { should belong_to :event, through: :event_tags }
+    it { should have_many :event_tags }
+    it { should have_many(:events).through :event_tags }
   end
 end
