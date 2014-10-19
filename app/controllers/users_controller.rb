@@ -8,21 +8,23 @@ class UsersController < ApplicationController
   def process_login
     @user = User.find_by(username: params[:username])
     if @user == nil
-      session[:error] = "Invalid Username"
+      username_error
       redirect_to root_path
     elsif @user.password_hash != params[:password_hash]
-      session[:error] = "Invalid Password"
+      password_error
       redirect_to root_path
     else
-      session[:error] = nil
+      clear_session_error
       if @user.username == "Admin"
-        session[:current_user_id] = @user.id
+        set_session
         redirect_to admin_dashboard_path(@user)
       elsif @user.username == "Parent"
-        session[:current_user_id] = @user.id
+        set_session
+        p "********************************************************************"
+        p @user
         redirect_to parent_dashboard_path(@user)
       elsif @user.username == "Student"
-        session[:current_user_id] = @user.id
+        set_session
         redirect_to student_dashboard_path(@user)
       end
     end
@@ -32,7 +34,11 @@ class UsersController < ApplicationController
   end
 
   def parent_dashboard
+    # p @user
+    # @user = User.find params[:id]
     @event = Event.new
+    @events = Event.all
+    # @events = Event.where(user_id: @user.id)
   end
 
   def student_dashboard
@@ -48,24 +54,24 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  def new
-    @user = User.new
-  end
+  # def new
+  #   @user = User.new
+  # end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      session[:current_user_id] = @user.id
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @user = User.new(user_params)
+  #   if @user.save
+  #     set_session
+  #     redirect_to user_path(@user)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   private
 
-  def user_params
-    params.require(:user).permit(:username, :password_hash, :level)
-  end
+  # def user_params
+  #   params.require(:user).permit(:username, :password_hash, :level)
+  # end
 
 end
