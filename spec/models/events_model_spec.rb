@@ -17,5 +17,7 @@ describe Event do
 
   describe "associations" do
     it { should belong_to :user }
+    it { should have_many :event_tags }
+    it { should have_many :tags, through: :event_tags }
   end
 end
