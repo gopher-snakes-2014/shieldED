@@ -19,7 +19,7 @@ feature "Tags" do
 
   scenario "can be added to events by clicking them" do
     visit show_event_path id: @event.id
-    click_link "#{@tag.tag_name}"
+    find("##{@tag.id}", :text => "#{@tag.tag_name}").click
     click_link "Confirm New Tags"
     expect(page).to have_content("##{@tag.tag_name}")
   end
