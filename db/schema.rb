@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018023029) do
+ActiveRecord::Schema.define(version: 20141019051759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "event_tags", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", force: true do |t|
     t.string   "details"
@@ -23,12 +30,16 @@ ActiveRecord::Schema.define(version: 20141018023029) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "submitter"
+    t.integer  "user_id"
     t.string   "event_photo_file_name"
     t.string   "event_photo_content_type"
     t.integer  "event_photo_file_size"
     t.datetime "event_photo_updated_at"
-    t.string   "submitter"
-    t.integer  "user_id"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string "tag_name"
   end
 
   create_table "users", force: true do |t|
