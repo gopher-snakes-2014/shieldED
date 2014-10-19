@@ -7,12 +7,19 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		Event.create(event_params)
+	 @event = Event.create( event_params )
+   UserMailer.event_notification(@event).deliver
+   render "acknowledgement"
 	end
+
+  def show
+    @event = Event.find params[:id]
+  end
 
   private
 
   def event_params
-    params.require(:event).permit(:details, :date, :location, :offender, :submitter).merge(user_id: current_user.id)
+    params.require(:event).permit(:details, :date, :location, :offender, :event_photo, :submitter).merge(user_id: current_user.id)
   end
+
 end

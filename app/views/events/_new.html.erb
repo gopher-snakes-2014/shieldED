@@ -1,7 +1,6 @@
 <h3>Record Event</h3>
 
-<%= form_for event, url: { action: "create" }, html: { class: "new_event" } do |f| %>
-
+<%= form_for :event, url: events_new_path, method: :post, html: { class: "new_event" } do |f| %>
 	<%= f.label 			:details, 			"What happened?" 															%>
 	<%= f.text_area 	:details 												 															%>
 	<%= f.label 			:date, 					"When?" 																			%>
@@ -12,7 +11,8 @@
 	<%= f.text_field 	:offender 																										%>
 	<%= f.label 			:submitter, 		"Include your name for followup? (optional)" 	%>
 	<%= f.text_field 	:submitter 																										%>
+	<%= f.label  			:event_photo,		"Upload a Photo from the Incident"						%>
+	<%= f.file_field	:event_photo																									%>
 	<%= f.submit "Submit", :class => "button [radius round]"		%>
-
 <% end %>
 

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'events/new' => 'events#new', as: "new_event"
   post 'events/new' => 'events#create'
 
+  get 'events/:id/show' => 'events#show', as: "show_event"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
