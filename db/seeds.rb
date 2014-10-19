@@ -21,3 +21,6 @@ User.all.each do |user|
                        created_at:  Faker::Date.between(120.days.ago, Date.today))
   end
 end
+
+tags = %w(violent verbal cyberbullying exclusion delayed_report one_off repeat_offender racist sexist property_damage threats rumors sexual spam disabilist homophobic stalking body_image theft)
+tags.each { |tag| Tag.create(tag_name: tag) }
