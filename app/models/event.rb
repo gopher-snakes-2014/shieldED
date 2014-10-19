@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :event_photo, :content_type => /\Aimage\/.*\Z/
 
 	belongs_to :user
+  has_many :event_tags
+  has_many :tags, through: :event_tags
 
   def self.search(search)
     if search
