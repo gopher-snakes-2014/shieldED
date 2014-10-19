@@ -1,0 +1,9 @@
+<h2>Available Tags</h2>
+
+<ul class="all_tags">
+  <% @tags.each do |tag| %>
+    <li class="tag" id="<%= tag.id %>" >
+      <%= tag.tag_name %>
+    </li>
+  <% end %>
+</ul>
