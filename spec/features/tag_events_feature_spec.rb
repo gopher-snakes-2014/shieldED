@@ -1,8 +1,9 @@
-describe "Events can be tagged" do
-  describe "description" do
+feature "Events can be tagged" do
+  scenario "description" do
     event = Event.create(details: "Barney tried to cut me with a piece of paper")
-    tag = Tag.create(tagname: "violent")
-    visit show_event_path(id: event.id)
+    tag = Tag.create(tag_name: "violent")
+
+    visit show_event_path id: event.id
     expect(page).to have_content("Barney")
     expect(page).to_not have_content("violent")
 
