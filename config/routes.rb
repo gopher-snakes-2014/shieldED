@@ -1,24 +1,22 @@
 Rails.application.routes.draw do
   resources :users
 
-  post '/users/login'           => 'users#process_login',      :as => 'process_login'
-  get  '/logout'                => 'users#logout',             :as => 'logout'
-
   root 'users#index'
 
-  get '/parents/dashboard'       => 'users#parent_dashboard',      :as => 'parent_dashboard'
-  get '/students/dashboard'       => 'users#student_dashboard',      :as => 'student_dashboard'
+  post '/users/login'                   => 'users#process_login',      :as => 'process_login'
+  get  '/logout'                        => 'users#logout',             :as => 'logout'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  get 'users/admins/dashboard'  => 'admins#admin_dashboard',   :as => 'admin_dashboard'
-  # You can have the root of your site routed with "root"
-  get 'users/admins/dashboard/search' => 'admins#search', :as => 'search'
+  get '/parents/dashboard'              => 'users#parent_dashboard',   :as => 'parent_dashboard'
+  get '/students/dashboard'             => 'users#student_dashboard',  :as => 'student_dashboard'
 
-  get 'events/new' => 'events#new', as: "new_event"
-  post 'events/new' => 'events#create'
+  get '/users/admins/dashboard'         => 'admins#admin_dashboard',   :as => 'admin_dashboard'
+  get '/users/admins/dashboard/search'  => 'admins#search',            :as => 'search'
 
-  get 'events/:id/show' => 'events#show', as: "show_event"
+  get '/events/:id/show'                => 'events#show',              :as => "show_event"
+  get '/events/new'                     => 'events#new',               :as => "new_event"
+  post '/events/new'                    => 'events#create'
+
+  get '/tags/show'                      => 'tags#_show',               :as => "show_tags"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
