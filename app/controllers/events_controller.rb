@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include ApplicationHelper
 
 	def new
 		@event = Event.new
@@ -6,6 +7,12 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		Event.create(details: params[:event][:details])
+		Event.create(event_params)
 	end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:details, :date, :location, :offender, :submitter).merge(user_id: current_user.id)
+  end
 end
