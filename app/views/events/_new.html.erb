@@ -1,7 +1,7 @@
 <h3>Record Event</h3>
 
 <%= form_for event, url: { action: "create" }, html: { class: "new_event" } do |f| %>
-<<<<<<< HEAD
+
 	<%= f.label 			:details, 			"What happened?" 															%>
 	<%= f.text_area 	:details 												 															%>
 	<%= f.label 			:date, 					"When?" 																			%>
@@ -13,18 +13,6 @@
 	<%= f.label 			:submitter, 		"Include your name for followup? (optional)" 	%>
 	<%= f.text_field 	:submitter 																										%>
 	<%= f.submit "Submit", :class => "button [radius round]"		%>
-=======
-  <%= f.label       :details,       "What happened?"                              %>
-  <%= f.text_area   :details                                                      %>
-  <%= f.label       :date,          "When?"                                       %>
-  <%= f.date_field  :date                                                         %>
-  <%= f.label       :location,      "Where?"                                      %>
-  <%= f.text_field  :location                                                     %>
-  <%= f.label       :offender,      "Who's the perp?"                             %>
-  <%= f.text_field  :offender                                                     %>
-  <%= f.label       :submitter,     "Include your name for followup? (optional)"  %>
-  <%= f.text_field  :submitter                                                    %>
-  <%= f.submit                      "Submit"                                      %>
->>>>>>> f9e877b56434ef96b16b318b1f336dc4b18c9277
+
 <% end %>
 
