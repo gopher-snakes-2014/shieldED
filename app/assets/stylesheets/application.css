@@ -76,7 +76,8 @@ footer p {
 }
 
 .report {
-  display: none;
-  border-style: solid;
-  border-color: black;
+  height: 100%;
+
+  background-color: White;
+  overflow: scroll;
 }

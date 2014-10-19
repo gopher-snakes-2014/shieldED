@@ -58,7 +58,7 @@
     <div class="large-8 columns">
       <div class = 'admin-placehold2'>
         <div class = "admin-search">
-        <%= form_tag search_path, :class => "search-form", :method => 'get' do %>
+        <%= form_tag search_path, :class => "search-form", :method => 'get', remote:true do %>
           <p>
             <%= text_area_tag :search, params[:search] %>
             <%= submit_tag "Search Reports",:id => "search", :name => nil %>
@@ -66,12 +66,7 @@
         <% end %>
         </div>
           <div class="report">
-            <%if @results%>
-            <%@results.each do |result|%>
-            <p><%=result.details%></p>
-            <p><%=result.submitter%></p>
-            <%end%>
-            <%end%>
+            <ul></ul>
           </div>
 
       </div>

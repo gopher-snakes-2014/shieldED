@@ -9,14 +9,13 @@ class AdminsController < ApplicationController
   end
 
   def search
-    item_find = params[:search]
+    p params[:search]
     p "*********"
-    content_type :json
-    # @latest = Event.last(5)
-    @results = Event.search(item_find)
+    @latest = Event.last(5)
+    # content_type :json
+    @results = Event.search(params[:search])
     p @results
     p "@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    @results.to_json
-    # render :admin_dashboard
+    render :json => @results
   end
 end
