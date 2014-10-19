@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
 	def create
 	 @event = Event.create( event_params )
+   UserMailer.event_notification(@event).deliver
    render "acknowledgement"
 	end
 
