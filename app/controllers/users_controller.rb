@@ -20,8 +20,6 @@ class UsersController < ApplicationController
         redirect_to admin_dashboard_path(@user)
       elsif @user.username == "Parent"
         set_session
-        p "********************************************************************"
-        p @user
         redirect_to parent_dashboard_path(@user)
       elsif @user.username == "Student"
         set_session
