@@ -93,6 +93,26 @@ footer p {
   font-family: Garamond;
 }
 
+.report {
+  height: 100%;
+  background-color: White;
+  overflow: scroll;
+  padding-left: 30px;
+}
+
+.report div {
+  width: 60%;
+  border-style: solid;
+  border-color: #8fb2b2;
+  background-color: #cfe1e1;
+  border-radius: 5px;
+  padding-left: 5%;
+}
+
+.report div li {
+  list-style: none;
+}
+
 .user-login {
   width: 300px;
   text-align: center;
@@ -113,10 +133,13 @@ footer p {
 .student-parent-login {
   width: 300px;
   text-align: center;
-  border: 1px solid black;
   border-radius: 5px;
   background-color: white;
   opacity: .9;
+}
+
+.user-login h1{
+  color: white;
 }
 
 .student-parent-login form {
@@ -130,6 +153,11 @@ footer p {
   background-color: #0066CC;
   border: 1px solid black;
   color: white;
+}
+
+.selected_tag {
+  background-color: #9d66ef;
+  border-radius: 5px;
 }
 
 .report {
