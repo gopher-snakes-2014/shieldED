@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def event_notification(event)
     @event = event
-    mail(to: 'anders.e.howerton@gmail.com', subject: "New Event Submitted")
+    mail(to: 'andrew.mcclellan3@gmail.com', subject: "New Event Submitted")
   end
 
 end

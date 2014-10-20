@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20141018023029) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "submitter"
+    t.integer  "user_id"
     t.string   "event_photo_file_name"
     t.string   "event_photo_content_type"
     t.integer  "event_photo_file_size"
     t.datetime "event_photo_updated_at"
-    t.string   "submitter"
-    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

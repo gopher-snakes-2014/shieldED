@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :users
 
-  post '/users/login'           => 'users#process_login',      :as => 'process_login'
+  post '/users/login/admin'           => 'users#process_login_admin',      :as => 'process_login_admin'
+  post '/users/login/sp'              => 'users#process_login_sp',         :as => 'process_login-sp'
   get  '/logout'                => 'users#logout',             :as => 'logout'
 
   root 'users#index'
