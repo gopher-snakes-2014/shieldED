@@ -1,3 +1,5 @@
+# CR use factoryGirl
+
 feature "Admin visits dashboard" do
 
   scenario 'an admin visits admin page' do

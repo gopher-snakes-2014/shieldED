@@ -19,6 +19,7 @@ feature "Tags" do
 
   xscenario "can be added to events by clicking them" do
     Capybara.default_wait_time = 10
+    # CR see wait_for_ajax method in the phase-3-guide
 
     visit show_event_path id: @event.id
     expect(page).to_not have_content("##{@tag.tag_name}")

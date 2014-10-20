@@ -18,6 +18,12 @@ class ApplicationController < ActionController::Base
     session[:current_user_id] = @user.id
   end
 
+# CR don't need to duplicate code to helpers - just add this
+
+#helper_method :current_user, :signed_in
+
+# CR I would use flash instead of session and either multiple keys or concatination
+
   def username_error
     session[:error] = "Invalid Username"
   end

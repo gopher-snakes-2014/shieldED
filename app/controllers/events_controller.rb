@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 	end
 
   def show
+    # CR use includes to avoid n+1 effect when showing @event.tags
     @event = Event.find params[:id]
     @tags = Tag.all
   end

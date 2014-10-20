@@ -28,6 +28,7 @@
        <li>
          <%=image_tag("sample.png" )%>
          <img height = "15">
+         <!-- CR no inline styles -->
        </li>
       </ul>
     </div>
@@ -57,6 +58,7 @@
           <%= form_tag search_path, :class => "search-form", :method => 'get', remote:true do %>
           <p>
             <%= text_area_tag :search, params[:search] %>
+            <!-- CR shouldn't have params[:search] if you are trying to prepopulate use an instance var-->
             <%= submit_tag "Search Reports",:id => "search", :name => nil %>
           </p>
           <% end %>
@@ -83,6 +85,7 @@
 
           </div>
           <div class="large-3 columns">
+            <!-- CR use your mailer -->
             <a href="mailto:guidance.counselor@gmail.com?Subject=Help%20Student" class="radius button right"> Send Email</a>
           </div>
         </div>

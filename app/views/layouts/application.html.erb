@@ -9,6 +9,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <!-- CR it might be possible to move this into application.js manifest file - see if the gem will allow this -->
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
 

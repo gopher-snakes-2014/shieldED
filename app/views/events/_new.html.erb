@@ -1,5 +1,5 @@
 <h3>Record Event</h3>
-
+<!-- CR should be able to do form_for event -->
 <%= form_for :event, url: events_new_path, method: :post, html: { class: "new_event" } do |f| %>
 	<%= f.label 			:details, 			"What happened?" 															%>
 	<%= f.text_area 	:details 												 															%>

@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
 
+
   def index
     @users = User.all
     @user = User.new
   end
+
+# CR use bCyrpt!  and move this logic mostly to the model.
+#if bad redirect root else redirect admin
+# CR not RESTful session create on the sessions controller
 
   def process_login_admin
     @user = User.find_by(username: params[:username])
@@ -19,7 +24,7 @@ class UsersController < ApplicationController
       redirect_to admin_dashboard_path(@user)
     end
   end
-
+# CR shouldn't need two login methods
   def process_login_sp
     @user = User.find_by(password_hash: params[:password_hash])
     if @user == nil
@@ -37,8 +42,13 @@ class UsersController < ApplicationController
     end
   end
 
+#CR make sure you are using roles
+
+# CR these should be on admin controller
   def admin_dashboard
   end
+
+# CR This should be on user controller
 
   def parent_dashboard
     @event = Event.new

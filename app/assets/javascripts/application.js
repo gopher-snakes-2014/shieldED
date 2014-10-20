@@ -17,6 +17,6 @@
 //= require_tree .
 
 
-
+// CR no js in manifest file
 $(function(){ $(document).foundation();
  });

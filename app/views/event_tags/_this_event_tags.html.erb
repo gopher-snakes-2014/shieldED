@@ -1,4 +1,5 @@
 <ul class="event_tags inline-list">
+  <!-- CR use include on the controller to avoid n+1 effect -->
   <% @event.tags.each do |tag| %>
   <li>#<%= tag.tag_name %></li>
   <% end %>

@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
 
   def self.search(search_item)
     incidents = []
+    # CR consider chaining these - check for efficiency
     if search_item
       incidents << self.where("details LIKE ?", "%#{search_item}%")
       incidents << self.where("submitter LIKE ?", "%#{search_item}%")
@@ -25,6 +26,7 @@ class Event < ActiveRecord::Base
 
   end
 
+# CR use strong params
   def tag(tags)
     tags.each do |tag|
       self.event_tags.create(tag_id: tag.to_i)

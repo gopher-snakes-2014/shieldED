@@ -1,4 +1,4 @@
-
+<!-- CR move to layout -->
   <header>
     <h1>Shield.ED</h1>
   </header>
@@ -7,10 +7,13 @@
 
     <li class = "student-parent-login">
       <h3>Student/Parent Login</h3>
+      <!-- CR if you use RESTful routes you can use form_for instead of form_tag -->
       <%= form_tag({:action => 'process_login_sp'}, { :class => "student-parent-login-form"}) do %>
         <%= label_tag("5 Digit Key: ") %>
         <%= password_field_tag(:password_hash) %>
+        <!-- CR this should be flash  -->
         <p class = "error"><%=session[:error]%></p>
+        <!-- CR see about factoring this out and only relying on submit not adding the class. -->
         <%= submit_tag("login", :class => "button [radius button]")  %>
     <% end %>
   </li>
@@ -24,7 +27,7 @@
         <%= password_field_tag(:password_hash) %>
         <p class = "error"><%=session[:error]%></p>
         <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %><<<<<<< HEAD
+    <% end %>
     </li>
 </ul>
 
