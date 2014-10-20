@@ -58,21 +58,31 @@ footer p {
 }
 
 .user-login {
-  width: 50%;
-  height: 85%;
-  margin: 0 auto;
+  float: right;
+  width: 40%;
+  height: 55%;
+  margin-right: 10%;
   text-align: center;
   margin-top: 10%;
-  border-style: solid;
+ /* border-style: solid;
   border-color: 5px Navy;
-  border-radius: 5px;
-  background-color: #85C2FF;
+  border-radius: 5px;*/
+  background:rgba(255,255,255,0.6);
   padding-top: 3%;
+}
+
+
+
+.user-login h1 {
+  color: #Black;
+  font-size: 3em;
+
 }
 
 .user-login form {
   width: 35%;
   margin: 0 auto;
+  color: White;
 }
 
 .report {
@@ -81,3 +91,10 @@ footer p {
   background-color: White;
   overflow: scroll;
 }
+
+body {
+  background-image: url("back.png");
+  background-size: cover;
+}
+
+
