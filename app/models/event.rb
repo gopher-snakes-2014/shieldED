@@ -11,16 +11,10 @@ class Event < ActiveRecord::Base
     if search_item
       incidents << self.where("details LIKE ?", "%#{search_item}%")
       incidents << self.where("submitter LIKE ?", "%#{search_item}%")
-      p incidents
-      p "%$%$%$%$%$%$%$%$%$%$%$%$%$%$%"
       incidents << self.where("offender LIKE ?", "%#{search_item}%")
       incidents << self.where("location LIKE ?", "%#{search_item}%")
-      p incidents.length
-      p "***********$$$$$$$*********"
-      p incidents.flatten!
-      p incidents.length
+      incidents.flatten!
       incidents.uniq!
-      p incidents.length
       return incidents
     else
       return search_item

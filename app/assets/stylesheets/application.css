@@ -83,11 +83,15 @@ footer p {
   margin: 0 auto;
   text-align: center;
   margin-top: 10%;
-  border-style: solid;
+
   border-color: 5px Navy;
   border-radius: 5px;
   background-color: #85C2FF;
   padding-top: 3%;
+}
+.user-login h1{
+  color: white;
+
 }
 
 .user-login form {
@@ -95,11 +99,10 @@ footer p {
   margin: 0 auto;
 }
 
-.video {
-position: fixed; right: 0; bottom: 0;
-min-width: 110%; min-height: 110%;
-width: auto; height: auto; z-index: -100;
-background: url(polina.jpg) no-repeat;
-background-size: cover;
-}
+
+/*body {
+  background: url("200.gif");
+  background-size: cover;
+  min-width: 110%; min-height: 110%;
+}*/
 
