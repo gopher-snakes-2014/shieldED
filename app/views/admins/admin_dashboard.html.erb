@@ -1,83 +1,79 @@
 <div class="admin-container">
-     <div class="row">
+  <div class="row">
     <div class="large-7 columns">
       <h1>Admin Report Detail</h1>
     </div>
-    <div class="large-9 columns">
-      <ul class="right button-group">
+  <div class="large-9 columns">
+    <ul class="right button-group">
       <li><a href="#" class="button">Issue Keys</a></li>
       <li><a href="#" class="button">Archive</a></li>
       <li><a href="#" class="button">Export to CSV</a></li>
-      <!-- <li><a href="#" class="button">Link 4</a></li> -->
-      </ul>
-     </div>
-   </div>
+    </ul>
+  </div>
+</div>
 
 
-  <div class="row">
-    <div class="large-12 columns">
+<div class="row">
+  <div class="large-12 columns">
     <div id="slider">
-     <ul class="orbit" data-orbit>
+      <ul class="orbit" data-orbit>
        <li>
          <%=image_tag("graph1.png" )%>
-           <img height = "15">
+         <img height = "15">
        </li>
        <li class="active">
          <%=image_tag("bar-char.png" )%>
-           <img height = "15">
+         <img height = "15">
        </li>
        <li>
          <%=image_tag("sample.png" )%>
-           <img height = "15">
+         <img height = "15">
        </li>
-     </ul>
-
+      </ul>
     </div>
-
     <hr/>
-    </div>
   </div>
+</div>
 
 
 
-  <div class="row">
-    <div class="large-4 columns">
-      <div class = 'admin-placehold'>
+<div class="row">
+  <div class="large-4 columns">
+    <div class = 'admin-placehold'>
       <h4>Recent Reports<h4>
         <ul>
           <%@latest.each do |event|%>
-            <li>
-              <a href=<%="/events/#{event.id}/show"%> ><%=event.date%> : <%=event.details[0..15]%></a>
-            </li>
+          <li>
+            <a href=<%="/events/#{event.id}/show"%> ><%=event.date%> : <%=event.details[0..15]%></a>
+          </li>
           <%end%>
         </ul>
       </div>
-
-    </div>
+  </div>
 
     <div class="large-8 columns">
       <div class = 'admin-placehold2'>
         <div class = "admin-search">
-        <%= form_tag search_path, :class => "search-form", :method => 'get', remote:true do %>
+          <%= form_tag search_path, :class => "search-form", :method => 'get', remote:true do %>
           <p>
             <%= text_area_tag :search, params[:search] %>
             <%= submit_tag "Search Reports",:id => "search", :name => nil %>
           </p>
-        <% end %>
+          <% end %>
         </div>
-          <div class="report">
-            <ul></ul>
-          </div>
+        <div class="report">
+          <ul></ul>
+        </div>
 
       </div>
     </div>
 
 
 
-    </div>
+  </div>
 
 
-<div class="row">
+  <div class="row">
     <div class="large-12 columns">
 
       <div class="panel">
@@ -110,7 +106,6 @@
             <li><a href="#">Issue Keys</a></li>
             <li><a href="#">Archive</a></li>
             <li><a href="#">Export to CSV</a></li>
-            <!-- <li><a href="#">Link 4</a></li> -->
           </ul>
         </div>
       </div>

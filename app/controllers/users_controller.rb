@@ -15,23 +15,13 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       clear_session_error
-      if @user.username == "Admin"
-        set_session
-        redirect_to admin_dashboard_path(@user)
-      elsif @user.username == "Parent"
-        set_session
-        redirect_to parent_dashboard_path(@user)
-      elsif @user.username == "Student"
-        set_session
-        redirect_to student_dashboard_path(@user)
-      end
+      set_session
+      redirect_to admin_dashboard_path(@user)
     end
   end
 
   def process_login_sp
-      @user = User.find_by(password_hash: params[:password_hash])
-      p "**********************************************************"
-      p @user
+    @user = User.find_by(password_hash: params[:password_hash])
     if @user == nil
       invalid_key_error
       redirect_to root_path
@@ -40,7 +30,7 @@ class UsersController < ApplicationController
       if @user.password_hash == "456PR"
         set_session
         redirect_to parent_dashboard_path(@user)
-      elsif @user.password_hash == "123ST"
+      else
         set_session
         redirect_to student_dashboard_path(@user)
       end
@@ -51,11 +41,7 @@ class UsersController < ApplicationController
   end
 
   def parent_dashboard
-    # p @user
-    # @user = User.find params[:id]
     @event = Event.new
-    @events = Event.all
-    # @events = Event.where(user_id: @user.id)
   end
 
   def student_dashboard
@@ -66,29 +52,5 @@ class UsersController < ApplicationController
     session[:current_user_id] = nil
     redirect_to root_path
   end
-
-  def show
-    @user = User.find params[:id]
-  end
-
-  # def new
-  #   @user = User.new
-  # end
-
-  # def create
-  #   @user = User.new(user_params)
-  #   if @user.save
-  #     set_session
-  #     redirect_to user_path(@user)
-  #   else
-  #     render :new
-  #   end
-  # end
-
-  private
-
-  # def user_params
-  #   params.require(:user).permit(:username, :password_hash, :level)
-  # end
 
 end

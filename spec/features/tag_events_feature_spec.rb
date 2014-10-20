@@ -1,5 +1,5 @@
 feature "Tags" do
-  before :all do
+  before :each do
     @event = Event.create(details: "Barney tried to cut me with a piece of paper")
     @tag = Tag.create(tag_name: "violent")
   end
@@ -26,6 +26,7 @@ feature "Tags" do
     find("##{@tag.id}", :text => "#{@tag.tag_name}").click
     click_button "Confirm New Tags"
 
+    expect(page).to have_content("#violent")
     expect(find('.event_tags')).to have_xpath('li')
   end
 end

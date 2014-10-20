@@ -1,6 +1,8 @@
 class TagsController < ApplicationController
-  def _show
+
+  def show
     @tags = Tag.all
+    render partial: 'tags/show'
   end
 
 end
