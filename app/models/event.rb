@@ -10,9 +10,15 @@ class Event < ActiveRecord::Base
   has_many :tags, through: :event_tags
 
   def self.search(search_item)
-
+    incidents = []
     if search_item
-      where("details LIKE ?", "%#{search_item}%")
+      incidents << self.where("details LIKE ?", "%#{search_item}%")
+      incidents << self.where("submitter LIKE ?", "%#{search_item}%")
+      incidents << self.where("offender LIKE ?", "%#{search_item}%")
+      incidents << self.where("location LIKE ?", "%#{search_item}%")
+      incidents.flatten!
+      incidents.uniq!
+      return incidents
     else
       return search_item
     end
