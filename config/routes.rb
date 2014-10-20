@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  get 'users/admins/dashboard'  => 'admins#admin_dashboard',   :as => 'admin_dashboard'
+  get '/admins/dashboard'  => 'admins#admin_dashboard',   :as => 'admin_dashboard'
   # You can have the root of your site routed with "root"
-  get 'users/admins/dashboard/search' => 'admins#search', :as => 'search'
+  get '/admins/dashboard/search' => 'admins#search', :as => 'search'
 
   get 'events/new' => 'events#new', as: "new_event"
   post 'events/new' => 'events#create'
