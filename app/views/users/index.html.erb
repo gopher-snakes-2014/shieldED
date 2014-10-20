@@ -2,14 +2,21 @@
     <h1>ShieldED HomePage</h1>
 
     <h2>Login</h2>
-      <%= form_tag :action => 'process_login' do %>
+      <h3>Admin</h3>
+      <%= form_tag({:action => 'process_login_admin'}, { :class => "admin-login-form"}) do %>
         <%= label_tag(:username, "Username: ") %>
         <%= text_field_tag(:username) %>
-      <br>
         <%= label_tag(:password_hash, "Password: ") %>
         <%= password_field_tag(:password_hash) %>
         <p class = "error"><%=session[:error]%></p>
-      <br>
+        <%= submit_tag("login", :class => "button [radius button]")  %>
+    <% end %>
+
+      <h3>Students/Parents</h3>
+      <%= form_tag({:action => 'process_login_sp'}, { :class => "student-parent-login-form"}) do %>
+        <%= label_tag("5 Digit Key: ") %>
+        <%= password_field_tag(:password_hash) %>
+        <p class = "error"><%=session[:error]%></p>
         <%= submit_tag("login", :class => "button [radius button]")  %>
     <% end %>
   </div>

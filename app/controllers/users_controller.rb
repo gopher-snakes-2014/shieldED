@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def process_login
+  def process_login_admin
     @user = User.find_by(username: params[:username])
     if @user == nil
       username_error
@@ -22,6 +22,25 @@ class UsersController < ApplicationController
         set_session
         redirect_to parent_dashboard_path(@user)
       elsif @user.username == "Student"
+        set_session
+        redirect_to student_dashboard_path(@user)
+      end
+    end
+  end
+
+  def process_login_sp
+      @user = User.find_by(password_hash: params[:password_hash])
+      p "**********************************************************"
+      p @user
+    if @user == nil
+      invalid_key_error
+      redirect_to root_path
+    else
+      clear_session_error
+      if @user.password_hash == "456PR"
+        set_session
+        redirect_to parent_dashboard_path(@user)
+      elsif @user.password_hash == "123ST"
         set_session
         redirect_to student_dashboard_path(@user)
       end
