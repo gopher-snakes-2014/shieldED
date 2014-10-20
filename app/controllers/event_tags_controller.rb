@@ -8,7 +8,7 @@ class EventTagsController < ApplicationController
     end
 
     @event = Event.find(params[:id])
-    render '_this_event_tags'
+    render partial:'this_event_tags'
   end
 
 end
