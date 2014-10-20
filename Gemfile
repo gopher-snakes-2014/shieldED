@@ -56,7 +56,6 @@ group :test do
   gem 'capybara-screenshot'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
-  gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'faker'
 end

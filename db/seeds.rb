@@ -1,4 +1,4 @@
-require "faker"
+# require "faker"
 
 User.create(username: "Admin",    password_hash: "1234", level: "admin")
 User.create(username: "Parent",   password_hash: "456PR", level: "parent")
