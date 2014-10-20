@@ -1,8 +1,8 @@
 <h1>Event Page</h1>
 
 <p><%= @event.details %></p>
-<% @event.tags.each do |tag| %>
-<p>#<%= tag.tag_name %></p>
-<% end %>
+<div class="event_tags_container" id="<%= @event.id %>" >
+  <%= render 'event_tags/this_event_tags', locals: @event %>
+</div>
 
-<%= render 'tags/show' %>
+<%= render 'tags/show', locals: @event %>
