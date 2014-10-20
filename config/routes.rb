@@ -3,22 +3,27 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  post  '/users/login'                    => 'users#process_login',      :as => 'process_login'
-  get   '/logout'                         => 'users#logout',             :as => 'logout'
+  post '/users/login/admin'               => 'users#process_login_admin',     :as => 'process_login_admin'
+  post  '/users/login'                    => 'users#process_login',           :as => 'process_login'
+  post  '/users/login/sp'                 => 'users#process_login_sp',        :as => 'process_login-sp'
+  get   '/logout'                         => 'users#logout',                  :as => 'logout'
 
-  get   '/parents/dashboard'              => 'users#parent_dashboard',   :as => 'parent_dashboard'
-  get   '/students/dashboard'             => 'users#student_dashboard',  :as => 'student_dashboard'
+  get   '/parents/dashboard'              => 'users#parent_dashboard',        :as => 'parent_dashboard'
+  get   '/students/dashboard'             => 'users#student_dashboard',       :as => 'student_dashboard'
 
-  get   '/users/admins/dashboard'         => 'admins#admin_dashboard',   :as => 'admin_dashboard'
-  get   '/users/admins/dashboard/search'  => 'admins#search',            :as => 'search'
+  get   '/users/admins/dashboard/search'  => 'admins#search',                 :as => 'search1'
+  get   '/admins/dashboard/search'        => 'admins#search',                 :as => 'search'
+  get   '/users/admins/dashboard'         => 'admins#admin_dashboard',        :as => 'admin_dashboard1'
+  get   '/admins/dashboard'               => 'admins#admin_dashboard',        :as => 'admin_dashboard'
 
-  get   '/events/:id/show'                => 'events#show',              :as => "show_event"
-  get   '/events/new'                     => 'events#new',               :as => "new_event"
+
+  get   '/events/:id/show'                => 'events#show',                   :as => "show_event"
+  get   '/events/new'                     => 'events#new',                    :as => "new_event"
   post  '/events/new'                     => 'events#create'
 
-  get   '/tags/show'                      => 'tags#_show',               :as => "show_tags"
+  get   '/tags/show'                      => 'tags#_show',                    :as => "show_tags"
 
-  post  '/events/:id/event_tags/create'   => 'event_tags#create',        :as => "event_tags_create"
+  post  '/events/:id/event_tags/create'   => 'event_tags#create',             :as => "event_tags_create"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

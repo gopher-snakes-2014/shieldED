@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'aws-sdk'
 # Add Paperclip for image upload
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

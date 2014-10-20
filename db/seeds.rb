@@ -1,8 +1,8 @@
 require "faker"
 
 User.create(username: "Admin",    password_hash: "1234", level: "admin")
-User.create(username: "Parent",   password_hash: "1234", level: "parent")
-User.create(username: "Student",  password_hash: "1234", level: "student")
+User.create(username: "Parent",   password_hash: "456PR", level: "parent")
+User.create(username: "Student",  password_hash: "123ST", level: "student")
 
 500.times do
   User.create(username: Faker::Internet.user_name, password_hash: "123", level: "student")

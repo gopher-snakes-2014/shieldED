@@ -27,5 +27,9 @@ class ApplicationController < ActionController::Base
     session[:error] = "Invalid Password"
   end
 
+  def invalid_key_error
+    session[:error] = "Invalid Key"
+  end
+
 
 end
