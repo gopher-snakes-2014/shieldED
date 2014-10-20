@@ -74,3 +74,8 @@ footer p {
   width: 35%;
   margin: 0 auto;
 }
+
+.selected_tag {
+  background-color: #9d66ef;
+  border-radius: 5px;
+}
