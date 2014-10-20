@@ -15,4 +15,5 @@ class AdminsController < ApplicationController
     render :json => @results
 
   end
+
 end
