@@ -1,15 +1,13 @@
 feature "Admin visits dashboard" do
 
   scenario 'an admin visits admin page' do
-    # @incidents = ["a","b","c","d","e","f","g"] add these when merged with models
-    # @incidents.first.date = "2013-19-22"
     visit "admins/dashboard"
     expect(page).to have_content('Report Detail')
     expect(page).to have_content("Recent Reports")
   end
 end
 
-feature "Admin searches for an incident" do
+feature "Admin searches for an incident " do
 
   scenario 'an admin searches incidents by content of event' do
     Event.create(submitter: "Jimmy", details: "She said I'm fat.", date: "2011-12-09")
@@ -20,4 +18,16 @@ feature "Admin searches for an incident" do
     expect(page).to have_content("2011-12-09")
 
   end
+
+  # scenario 'an admin searches for events with submitter option in search field' do
+  #   Event.create(submitter: "Ellen", details: "He barfed on me.", date: "2014-07-19", location: "stairwell", offender: "do-do-bird")
+  #   visit "admins/dashboard"
+  #   expect(response).to eq(200)
+
+  #   fill_in "Search", :with => "Ellen"
+  #   click_button "Search Reports"
+  #   expect(page).to have_content("He barfed")
+
+  # end
 end
+

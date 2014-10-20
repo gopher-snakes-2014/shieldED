@@ -16,40 +16,22 @@
 //= require turbolinks
 //= require_tree .
 
+
+
 $(function(){ $(document).foundation();
  });
-
-// var getReports = function(searchData) {
-//   console.log("getting")
-//   console.log(searchData)
-//   $.ajax({
-//     url: '/admins/dashboard/search',
-//     type: 'get',
-//     data: searchData
-//   }).done(function(data) {
-//     console.log("success" + data);
-//   }).fail(function() {
-//      console.log("fail");
-//   });
-// },
 
 bindEvents = (function() {
   $(".search-form").on('ajax:success', function(e, data){
     $.each(data, function (obj, val){
-      $(".report ul").append('<li>' + val.date + '</li>')
+      $(".report ul").append('<div> <li>' + val.date + '</li>   ' + val.details + ' </div><br>')
     });
     $(".admin-search").hide(400);
     console.log(data)
-    $(".report").show(500);
+    $(".report").show(400);
   });
   $(".search-form").on('ajax:error', function(e, data) {console.log(data)});
 });
-
-  // $("#close").click(function(){
-  //   event.preventDefault();
-  //   $("report").hide(500);
-  //   $("admin-search").show(400);
-  // });
 
 $( document ).ready(function() {
    bindEvents();
