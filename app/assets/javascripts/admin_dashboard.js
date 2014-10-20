@@ -20,8 +20,16 @@ bindLinkToEvent = (function() {
   $(".search-form").on('ajax:error', function(e, data) {console.log(data)});
 });
 
+bindButtonClose = (function() {
+  $("#button-close").on('click', function() {
+    $(".report").hide(400);
+    $(".admin-search").show(400);
+  });
+});
+
 $( document ).ready(function() {
    bindEvents();
   $(".report").hide();
    bindLinkToEvent();
+   bindButtonClose();
 });

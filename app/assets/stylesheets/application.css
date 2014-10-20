@@ -71,26 +71,27 @@ footer p {
   background-color: #cfe1e1;
   border-radius: 5px;
   padding-left: 5%;
+  margin-left: 10%
 }
 
 .report div li {
   list-style: none;
+
 }
 
 .user-login {
+  float: right;
   width: 50%;
-  height: 85%;
+  height: 65%;
   margin: 0 auto;
   text-align: center;
-  margin-top: 10%;
-
-  border-color: 5px Navy;
-  border-radius: 5px;
-  background-color: #85C2FF;
+ /* margin-top: 10%;*/
+  background-color: rgb(255, 255, 255, 0.5);
   padding-top: 3%;
 }
 .user-login h1{
   color: white;
+  /*color: black;*/
 
 }
 
@@ -104,8 +105,11 @@ footer p {
   border-radius: 5px;
 }
 
-.report {
-  height: 100%;
-  background-color: White;
-  overflow: scroll;
+body {
+  background: url("giphy.gif");
+  background-size: cover;
+}
+
+#button-close {
+  margin-top: 15px;
 }
