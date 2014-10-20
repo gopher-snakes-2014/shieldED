@@ -46,7 +46,7 @@
   background-color: #CFCFCF;
 }
 
-.admin-form {
+.admin-search {
   height: 40%;
   width: 50%;
   margin: 0 auto;
@@ -58,19 +58,26 @@ footer p {
 }
 
 .user-login {
-  width: 30%;
-  height: 65%;
+  width: 50%;
+  height: 85%;
   margin: 0 auto;
   text-align: center;
   margin-top: 10%;
   border-style: solid;
   border-color: 5px Navy;
-  border-radius: 10%;
-  background-color: #B3D8CB;
+  border-radius: 5px;
+  background-color: #85C2FF;
   padding-top: 3%;
 }
 
 .user-login form {
   width: 35%;
   margin: 0 auto;
+}
+
+.report {
+  height: 100%;
+
+  background-color: White;
+  overflow: scroll;
 }
