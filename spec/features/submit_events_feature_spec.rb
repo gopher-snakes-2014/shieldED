@@ -1,7 +1,7 @@
 feature "Events" do
   scenario "should be submittable from the events/new page" do
     @user = User.create(username: "Billy")
-    EventsController.any_instance.stub(:current_user) { @user }
+    allow_any_instance_of(EventsController).to receive(:current_user).and_return(@user)
 
     visit '/events/new'
     expect(page).to have_content('Record Event')

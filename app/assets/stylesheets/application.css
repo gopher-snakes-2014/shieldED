@@ -75,9 +75,13 @@ footer p {
   margin: 0 auto;
 }
 
+.selected_tag {
+  background-color: #9d66ef;
+  border-radius: 5px;
+}
+
 .report {
   height: 100%;
-
   background-color: White;
   overflow: scroll;
 }

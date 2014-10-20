@@ -1,0 +1,14 @@
+<h2>Available Tags</h2>
+
+<ul class="all_tags inline-list">
+  <% @tags.each do |tag| %>
+  <% unless @event.tags.include? tag %>
+    <li class="tag" id="<%= tag.id %>" >
+      <%= tag.tag_name %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<button>Confirm New Tags</button>
+<a href="<%=admin_dashboard_url%>"><button>Admin Dashboard</button></a>
