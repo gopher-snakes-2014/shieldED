@@ -47,7 +47,7 @@
         <ul>
           <%@latest.each do |event|%>
             <li>
-              <a href><%=event.date%> : <%=event.details[0..15]%></a>
+              <a href=<%="/events/#{event.id}/show"%> ><%=event.date%> : <%=event.details[0..15]%></a>
             </li>
           <%end%>
         </ul>
