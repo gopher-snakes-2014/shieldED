@@ -1,12 +1,22 @@
 
-    <!-- <iframe class = 'video', src="//player.vimeo.com/video/86275372"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  --><!-- <p><a href="http://vimeo.com/86275372">Scuba Diving Bonaire - Something Special</a> from <a href="http://vimeo.com/drpedro">Pierre Molin</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
- <div class = "all-back">
+  <header>
+    <h1>Shield.ED</h1>
+  </header>
 
+  <ul class = "login-boxes">
 
-  <div class="user-login">
-    <h1>ShieldED HomePage</h1>
-    <h2>Login</h2>
-      <h3>Admin</h3>
+    <li class = "student-parent-login">
+      <h3>Student/Parent Login</h3>
+      <%= form_tag({:action => 'process_login_sp'}, { :class => "student-parent-login-form"}) do %>
+        <%= label_tag("5 Digit Key: ") %>
+        <%= password_field_tag(:password_hash) %>
+        <p class = "error"><%=session[:error]%></p>
+        <%= submit_tag("login", :class => "button [radius button]")  %>
+    <% end %>
+  </li>
+
+    <li class="user-login">
+      <h3>Admin Login</h3>
       <%= form_tag({:action => 'process_login_admin'}, { :class => "admin-login-form"}) do %>
         <%= label_tag(:username, "Username: ") %>
         <%= text_field_tag(:username) %>
@@ -14,14 +24,8 @@
         <%= password_field_tag(:password_hash) %>
         <p class = "error"><%=session[:error]%></p>
         <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %>
+    <% end %><<<<<<< HEAD
+    </li>
+</ul>
 
-      <h3>Students/Parents</h3>
-      <%= form_tag({:action => 'process_login_sp'}, { :class => "student-parent-login-form"}) do %>
-        <%= label_tag("5 Digit Key: ") %>
-        <%= password_field_tag(:password_hash) %>
-        <p class = "error"><%=session[:error]%></p>
-        <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %>
-  </div>
-</div>
+

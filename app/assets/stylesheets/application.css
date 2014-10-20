@@ -16,6 +16,28 @@
 
  */
 
+ body {
+  background: url(http://oi58.tinypic.com/21l79zd.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+ }
+
+ header {
+  background-color: rgba(57, 57, 57, .8);
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding-left: 10%;
+ }
+
+ header h1 {
+  font-family: robofan free;
+  font-size: 3.0em;
+  color: white;
+ }
+
 .admin-container {
   background-color: #3A3A3B;
 }
@@ -57,6 +79,20 @@ footer p {
   color: white;
 }
 
+.login-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top: 20%;
+  font-family: Garamond;
+}
+
+.login-boxes h3 {
+  font-family: Garamond;
+}
+
 .report {
   height: 100%;
   background-color: White;
@@ -80,19 +116,48 @@ footer p {
 }
 
 .user-login {
+  width: 300px;
+  text-align: center;
+  border: 1px solid black;
+  margin-left: 5%;
+  border-radius: 5px;
+  background-color: white;
+  opacity: .9;
+}
+
+.user-login form {
   width: 50%;
   height: 65%;
   margin: 0 auto;
   text-align: center;
   padding-top: 3%;
+  font-size: .1em;
+  color: white;
 }
+
+.student-parent-login {
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  opacity: .9;
+}
+
 .user-login h1{
   color: white;
 }
 
-.user-login form {
-  width: 35%;
+.student-parent-login form {
+  width: 50%;
   margin: 0 auto;
+  font-size: .1em;
+  color: white;
+}
+
+.button {
+  background-color: #0066CC;
+  border: 1px solid black;
+  color: white;
 }
 >';p
 k
