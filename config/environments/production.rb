@@ -89,6 +89,6 @@ Rails.application.configure do
       }
     }
     #Set POSTMARK as the default mail deliverer
-    config.action_mailer.postmark_api_key = ENV['POSTMARK_API_KEY']
-    config.action_mailer.delivery_method  = :postmark
+    # config.action_mailer.postmark_api_key = ENV['POSTMARK_API_KEY']
+    # config.action_mailer.delivery_method  = :postmark
 end
