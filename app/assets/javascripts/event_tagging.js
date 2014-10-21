@@ -8,16 +8,16 @@ TagsModel.prototype = {
 
   fetch: function() {
     return $.ajax({
-        url: '/events/'+this.eventID+'/event_tags/create',
-        type: 'POST',
-        data: {tags: this.sendTags},
-      })
-      .done(function(data) {
-        this.receivedTags = data
-      }.bind(this))
-      .fail(function() {
-        console.log("tag fetch fail");
-      })
+              url: '/events/'+this.eventID+'/event_tags/create',
+              type: 'POST',
+              data: {tags: this.sendTags},
+            })
+            .done(function(data) {
+              this.receivedTags = data
+            }.bind(this))
+            .fail(function() {
+              console.log("tag fetch fail");
+            })
   },
 
   collectSelected: function() {
@@ -45,8 +45,8 @@ TagsView.prototype = {
   },
 
   toggleTags: function(id){
-      $('#'+id).toggleClass('selected_tag')
-    },
+    $('#'+id).toggleClass('selected_tag')
+  },
 
 }
 
@@ -76,7 +76,6 @@ TagsController.prototype = {
 
   toggleSelection: function(clickEvent){
     var tagId = clickEvent.target.id
-    console.log("you clicked a tag: "+tagId);
     this.view.toggleTags(tagId)
   },
 
