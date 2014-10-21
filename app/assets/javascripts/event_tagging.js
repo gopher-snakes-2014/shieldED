@@ -8,7 +8,7 @@ TagsModel.prototype = {
 
   fetch: function() {
     var self = this
-    $.ajax({
+    return $.ajax({
         url: '/events/'+this.eventID+'/event_tags/create',
         type: 'POST',
         data: {tags: this.sendTags},
@@ -73,13 +73,13 @@ TagsController.prototype = {
 
   replaceTags: function() {
     this.model.collectSelected()
-
+    var that = this
     $.when(this.model.fetch())
       .then(function() {
-        var receivedTags = this.model.receivedTags
-        console.log("Here are the tags I received: "+this.model.receivedTags);
-        this.view.renderNewTags(receivedTags);
-        this.view.clearUsedTags();
+        var receivedTags = that.model.receivedTags
+        console.log("Here are the tags I received: "+that.model.receivedTags);
+        that.view.renderNewTags(receivedTags);
+        that.view.clearUsedTags();
         }
       );
   },
