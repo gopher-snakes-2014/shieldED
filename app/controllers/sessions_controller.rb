@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def process_login_sp
+  def process_login
     @user = User.find_by(password_hash: params[:password_hash])
     if @user == nil
       invalid_key_error
@@ -30,6 +30,11 @@ class SessionsController < ApplicationController
         redirect_to student_dashboard_path(@user)
       end
     end
+  end
+
+  def logout
+    session[:current_user_id] = nil
+    redirect_to root_path
   end
 
 

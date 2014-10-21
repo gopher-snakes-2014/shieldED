@@ -5,8 +5,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
-
   def admin_dashboard
   end
 
@@ -18,9 +16,6 @@ class UsersController < ApplicationController
     @event = Event.new
   end
 
-  def logout
-    session[:current_user_id] = nil
-    redirect_to root_path
-  end
+
 
 end
