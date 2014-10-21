@@ -184,3 +184,6 @@ footer p {
   visibility: hidden;
 }
 
+.show-event-details {
+  overflow: scroll;
+}

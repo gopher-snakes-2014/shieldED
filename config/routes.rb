@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/admins/dashboard/bubbles'          => 'admins#bubbles'
 
   get   '/events/:id/show'                => 'events#show',                   :as => "show_event"
+  get   '/events/:id/show_partial'        => 'events#show_partial',           :as => "show_event_partial"
   get   '/events/new'                     => 'events#new',                    :as => "new_event"
   post  '/events/new'                     => 'events#create'
 
