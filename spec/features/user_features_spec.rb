@@ -21,7 +21,7 @@ feature 'Student Dashboard' do
     end
     expect(page).to have_content('Upload a Photo')
     expect(page).to_not have_content('Admin')
-    expect(page).to have_content('Record Event')
+    expect(page).to have_content('Event Summary')
   end
 end
 
@@ -35,7 +35,7 @@ feature 'Parent Dashboard' do
     end
     expect(page).to have_content('Upload a Photo')
     expect(page).to_not have_content('Admin')
-    expect(page).to have_content('Record Event')
+    expect(page).to have_content('Event Summary')
   end
 end
 

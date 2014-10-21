@@ -1,13 +1,13 @@
 
-  <header>
+<!--   <header>
     <h1>Shield.ED</h1>
-  </header>
+  </header> -->
 
   <ul class = "login-boxes">
 
     <li class = "student-parent-login">
       <h3>Student/Parent Login</h3>
-      <%= form_tag({:action => 'process_login_sp'}, { :class => "student-parent-login-form"}) do %>
+      <%= form_tag({:controller => 'sessions', :action => 'process_login_sp'}, { :class => "student-parent-login-form"}) do %>
         <%= label_tag("5 Digit Key: ") %>
         <%= password_field_tag(:password_hash) %>
         <p class = "error"><%=session[:error]%></p>
@@ -17,14 +17,14 @@
 
     <li class="user-login">
       <h3>Admin Login</h3>
-      <%= form_tag({:action => 'process_login_admin'}, { :class => "admin-login-form"}) do %>
+      <%= form_tag({:controller => 'sessions', :action => 'process_login_admin'}, { :class => "admin-login-form"}) do %>
         <%= label_tag(:username, "Username: ") %>
         <%= text_field_tag(:username) %>
         <%= label_tag(:password_hash, "Password: ") %>
         <%= password_field_tag(:password_hash) %>
         <p class = "error"><%=session[:error]%></p>
         <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %><<<<<<< HEAD
+    <% end %>
     </li>
 </ul>
 
