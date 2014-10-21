@@ -1,9 +1,11 @@
-<h1>Event Page</h1>
+<div class="event_index">
+  <h1>Event Page</h1>
 
-<p><%= @event.details %></p>
+  <p><%= @event.details %></p>
 
-<div class="event_tags_container" id="<%= @event.id %>" >
-  <%= render 'event_tags/this_event_tags', locals: @event %>
+  <div class="event_tags_container" id="<%= @event.id %>" >
+    <%= render 'event_tags/this_event_tags', locals: @event %>
+  </div>
+
+  <%= render 'tags/show', locals: @event %>
 </div>
-
-<%= render 'tags/show', locals: @event %>
