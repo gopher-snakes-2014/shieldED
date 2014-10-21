@@ -1,8 +1,8 @@
-.user-login {
-  width: 300px;
+.about-shielded {
+  width: 35%;
   text-align: center;
   border: 1px solid black;
-  margin-left: 5%;
+  margin-right: 5%;
   border-radius: 5px;
   background-color: white;
   opacity: .9;
@@ -21,12 +21,12 @@
 .login-boxes h3 {
   font-family: Garamond;
 }
-.user-login form {
+/*.user-login form {
   width: 50%;
   margin: 0 auto;
   font-size: .1em;
   color: white;
-}
+}*/
 
 .student-parent-login {
   width: 300px;
@@ -36,7 +36,7 @@
   opacity: .9;
 }
 
-.user-login h1{
+.about-shielded h1{
   color: white;
 }
 

@@ -17,6 +17,21 @@
       <% if signed_in? %>
         <%= link_to("logout",logout_path) %>
       <% end %>
+
+      <a href="#" data-reveal-id="myModal">Admin</a>
+      <div id="myModal" class="reveal-modal" data-reveal>
+          <h3>Admin Login</h3>
+          <%= form_tag({:controller => 'sessions', :action => 'process_login_admin'}, { :class => "admin-login-form"}) do %>
+            <%= label_tag(:username, "Username: ") %>
+            <%= text_field_tag(:username) %>
+            <%= label_tag(:password_digest, "Password: ") %>
+            <%= password_field_tag(:password_digest) %>
+            <p class = "error"><%=session[:error]%></p>
+            <%= submit_tag("login", :class => "button [radius button]")  %>
+          <% end %>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
+
     </header>
 
   </head>

@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if @user == nil
       username_error
       redirect_to root_path
-    elsif @user.password_hash != params[:password_hash]
+    elsif @user.password_digest != params[:password_digest]
       password_error
       redirect_to root_path
     else
@@ -15,8 +15,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  # def process_login_admin
+  #   @user = User.find_by(username: params[:username])
+  #   if @user.valid_login?
+  #     redirect_to admin_dashboard_path(@user)
+  #   else
+  #     redirect_to root_path
+  # end
+
   def process_login
-    @user = User.find_by(password_hash: params[:password_hash])
+    @user = User.find_by(password_digest: params[:password_digest])
     if @user == nil
       invalid_key_error
       redirect_to root_path

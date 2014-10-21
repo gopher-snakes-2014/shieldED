@@ -30,4 +30,6 @@ class ApplicationController < ActionController::Base
     session[:error] = "Invalid Key"
   end
 
+  helper_method :current_user, :signed_in
+
 end

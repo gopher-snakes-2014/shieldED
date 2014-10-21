@@ -1,30 +1,23 @@
 <ul class = "login-boxes">
 
-    <li class = "student-parent-login">
+   <li class="about-shielded">
 
-      <h3>Student/Parent Login</h3>
-      <%= form_tag({:controller => 'sessions', :action => 'process_login'}, { :class => "student-parent-login-form"}) do %>
-        <%= label_tag("5 Digit Key: ") %>
-        <%= password_field_tag(:password_hash) %>
-        <p class = "error"><%=session[:error]%></p>
-        <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %>
+    <h3>About Shield.ED<h3>
+    <h3>Happy Things...</h3>
 
   </li>
 
-  <li class="user-login">
+  <li class = "student-parent-login">
 
-      <h3>Admin Login</h3>
-      <%= form_tag({:controller => 'sessions', :action => 'process_login_admin'}, { :class => "admin-login-form"}) do %>
-        <%= label_tag(:username, "Username: ") %>
-        <%= text_field_tag(:username) %>
-        <%= label_tag(:password_hash, "Password: ") %>
-        <%= password_field_tag(:password_hash) %>
-        <p class = "error"><%=session[:error]%></p>
-        <%= submit_tag("login", :class => "button [radius button]")  %>
+    <h3>Student/Parent Login</h3>
+    <%= form_tag({:controller => 'sessions', :action => 'process_login'}, { :class => "student-parent-login-form"}) do %>
+      <%= label_tag("5 Digit Key: ") %>
+      <%= password_field_tag(:password_digest) %>
+      <p class = "error"><%=session[:error]%></p>
+      <%= submit_tag("login", :class => "button [radius button]")  %>
     <% end %>
 
-    </li>
+  </li>
 
 </ul>
 
