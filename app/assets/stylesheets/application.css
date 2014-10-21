@@ -179,3 +179,7 @@ footer p {
 .right_align {
   float: right;
 }
+
+.stasher {
+  visibility: hidden;
+}

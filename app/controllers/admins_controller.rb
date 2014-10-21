@@ -1,9 +1,17 @@
 class AdminsController < ApplicationController
 
   def admin_dashboard
+
     @events = Event.all
-    @total = Event.count
+    @total = @events.length
     @latest = Event.last(5)
+    @physical_total = Event.find_physical
+    @verbal_total = Event.find_verbal
+    p @verbal_total
+    @rumor_total = Event.find_rumor
+    @cyber_total = Event.find_cyber
+    @ex_total = Event.find_exclusion
+    render json: {:physical => @physical_total}
   end
 
   def search

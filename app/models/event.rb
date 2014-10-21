@@ -31,4 +31,24 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def self.find_physical
+    where("details LIKE ?", "%impedit%").count  #148
+  end
+
+  def self.find_verbal
+    where("details LIKE ?", "%blanditiis%").count  #151
+  end
+
+  def self.find_rumor
+    where("details LIKE ?", "%suscipit%").count #162
+  end
+
+  def self.find_cyber
+    where("details LIKE ?", "%voluptatem%").count  #546
+  end
+
+  def self.find_exclusion
+    where("details LIKE ?", "%repellat%").count  #147
+  end
+
 end
