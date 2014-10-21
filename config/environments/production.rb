@@ -88,16 +88,14 @@ Rails.application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
-  #Set POSTMARK as the default mail deliverer
 
   config.action_mailer.delivery_method  = :smtp
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: 'example.com',
     authentication: 'plain',
     user_name: ENV["SECRET_USERNAME"],
     password: ENV["SECRET_PASSWORD"],
-    enable_starttls_auto: true }
+    enable_starttls_auto: true
   }
 end
