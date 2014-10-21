@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get   '/admins/dashboard'               => 'admins#admin_dashboard',        :as => 'admin_dashboard'
   get   '/admins/dashboard/search'        => 'admins#search',                 :as => 'search'
 
+  get '/admins/dashboard/charts'          => 'admins#charts'
+
   get   '/events/:id/show'                => 'events#show',                   :as => "show_event"
   get   '/events/new'                     => 'events#new',                    :as => "new_event"
   post  '/events/new'                     => 'events#create'
@@ -20,5 +22,6 @@ Rails.application.routes.draw do
   get   '/tags/show'                      => 'tags#show',                    :as => "show_tags"
 
   post  '/events/:id/event_tags/create'   => 'event_tags#create',             :as => "event_tags_create"
+
 
 end

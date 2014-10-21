@@ -31,6 +31,12 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def self.get_totals
+    totals = []
+    p "$$$$$$$$$$$$$$"
+    p totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
+  end
+
   def self.find_physical
     where("details LIKE ?", "%impedit%").count  #148
   end
