@@ -20,8 +20,8 @@ class AdminsController < ApplicationController
   end
 
   def bubbles
-    @event = Event.last
-    render :json => {}
+    totals = Event.get_totals
+    render :json => {:totals => totals}
   end
 
 end

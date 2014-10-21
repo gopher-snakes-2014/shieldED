@@ -26,12 +26,17 @@ google.setOnLoadCallback(drawChart);
         ]);
 
 
-        var options = {'title':'Frequency of Reports by Month',
-                        width:900,
+        var options = {'title':'Frequency of Reports by Month by Calendar Year',
+                        width:1000,
                         height:500,
                         is3D: true,
-                        fontSize: 30,
-                        colorAxis: {colors: ['blue', 'red']}}
+                        fontSize: 20,
+                        colorAxis: {colors: ['blue', 'red']},
+                        hAxis: {title: "Month"},
+                        yAxis: {title: "Type"},
+                        hAxis: { ticks: [{v:0,f:""},{v:20,f:"Jan"},{v:40, f:"Feb"}, {v:60, f:"March"}, {v:80,f:"April"},{v:100, f:"May"}, {v:120, f:"June"}, {v:140,f:"July"}, {v:160, f:"Aug"}, {v:180, f:"Sept"}, {v:200, f:"Oct"}, {v:220, f:"Nov"}, {v:240, f:"Dec"}, {v:260,f:""} ] },
+                        yAxis: { ticks: [5, 10, 15, 20, 25, 30, 60, 65]}
+                      }
 
       var chart = new google.visualization.BubbleChart(document.getElementById('bubble-div'));
       chart.draw(data, options);
