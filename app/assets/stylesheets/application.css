@@ -169,3 +169,13 @@ footer p {
 #button-close {
   margin-top: 15px;
 }
+
+.event_index {
+  background-color: rgba(200,200,200,0.5);
+  margin: 50px 50px;
+  padding: 15px;
+}
+
+.right_align {
+  float: right;
+}
