@@ -5,11 +5,13 @@
   </head>
   <body>
     <h1>ShieldED Notification:</h1>
-    <p>A new incident has been submitted by a parent/student from your school:</p>
-    <p>Event Details: <%=@event.details%></p>
-    <p>Event Submitter: <%=@event.submitter%></p>
-    <p>Event Offender: <%=@event.offender%></p>
-    <p>Event Location: <%=@event.location%></p>
-    <p>Event Date: <%=@event.date%></p>
+    <h2>A new incident has been submitted by a parent/student from your school:</h2>
+    <p><b>Event Details:</b> <%=@event.details%></p>
+    <p><b>Event Submitter:</b> <%=@event.submitter%></p>
+    <p><b>Event Offender:</b> <%=@event.offender%></p>
+    <p><b>Event Location:</b> <%=@event.location%></p>
+    <p><b>Event Date:</b> <%=@event.date%></p>
+    <p><b>Attachments:</b> </p>
+    <%= image_tag @event.event_photo.url %>
   </body>
 </html>
