@@ -1,7 +1,7 @@
 describe User do
   describe "attributes" do
     it { should respond_to :username        }
-    it { should respond_to :password_hash   }
+    it { should respond_to :password_digest   }
   end
 
   describe "validations" do

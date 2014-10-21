@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  post  '/sessions/login/admin'           => 'sessions#process_login_admin',     :as => 'process_login_admin'
-  post  '/sessions/login/sp'              => 'sessions#process_login',           :as => 'process_login'
-  get   '/sessions/logout'                => 'sessions#logout',                  :as => 'logout'
+  # post  '/sessions/login/admin'           => 'sessions#process_login_admin',     :as => 'process_login_admin'
+  # post  '/sessions/login/sp'              => 'sessions#process_login',           :as => 'process_login'
+  post '/sessions/login'                 => 'sessions#create',                  :as => 'login'
+  # post '/sessions/login/sp'               => 'sessions#create'                   :as => 'create_sp_session'
+  get  '/sessions/logout'                => 'sessions#logout',                  :as => 'logout'
 
   get   '/users/parents/dashboard'        => 'users#parent_dashboard',        :as => 'parent_dashboard'
   get   '/users/students/dashboard'       => 'users#student_dashboard',       :as => 'student_dashboard'
