@@ -14,9 +14,14 @@ class AdminsController < ApplicationController
     render :json => @results
   end
 
-  def charts
+  def pie
     totals = Event.get_totals
     render :json => {:totals => totals}
+  end
+
+  def bubbles
+    @event = Event.last
+    render :json => {}
   end
 
 end

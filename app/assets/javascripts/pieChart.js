@@ -3,7 +3,7 @@ google.setOnLoadCallback(drawChart);
   function drawChart() {
 
       $.ajax({
-        url: '/admins/dashboard/charts',
+        url: '/admins/dashboard/pie',
         }).done(function(serverData) {
           fillPieChart(serverData);
       });
@@ -21,13 +21,19 @@ google.setOnLoadCallback(drawChart);
         ]);
 
         var options = {'title':'Reports of Bullying based on Keyword',
-                       'width':900,
-                       'height':400};
+                        width:900,
+                        height:500,
+                        colors: ['#00CCCC','#669933', '#66FF66', '#339999', '#99CCCC' ],
+                        is3D: true,
+                        fontSize: 30}
 
-      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.PieChart(document.getElementById('chart-div'));
       chart.draw(data, options);
       }
     }
+
+
+
 // ChartController = function() {
 //   this.view = new ChartView();
 // }
@@ -40,8 +46,8 @@ google.setOnLoadCallback(drawChart);
 
 // ChartView.prototype = {
 
+//   var data = new google.visualization.DataTable();
 //   stylePieChart: function(serverData) {
-//         var data = new google.visualization.DataTable();
 //         data.addColumn('string', 'Type');
 //         data.addColumn('number', 'Total');
 //         data.addRows([
@@ -64,6 +70,8 @@ google.setOnLoadCallback(drawChart);
 //         url: '/admins/dashboard/charts',
 //         }).done(function(serverData) {
 //           console.log("success")
+//           console.log(that)
+//           console.log(that.view)
 //           that.view.stylePieChart(serverData);
 //           that.drawChart(that.view.data, that.view.options)
 //       });

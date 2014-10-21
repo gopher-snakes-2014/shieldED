@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get   '/admins/dashboard'               => 'admins#admin_dashboard',        :as => 'admin_dashboard'
   get   '/admins/dashboard/search'        => 'admins#search',                 :as => 'search'
 
-  get '/admins/dashboard/charts'          => 'admins#charts'
+  get '/admins/dashboard/pie'          => 'admins#pie'
+  get '/admins/dashboard/bubbles'          => 'admins#bubbles'
 
   get   '/events/:id/show'                => 'events#show',                   :as => "show_event"
   get   '/events/new'                     => 'events#new',                    :as => "new_event"
