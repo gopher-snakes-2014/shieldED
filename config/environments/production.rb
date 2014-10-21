@@ -89,6 +89,14 @@ Rails.application.configure do
     }
   }
   #Set POSTMARK as the default mail deliverer
-  config.action_mailer.postmark_settings = { :api_key => ENV["POSTMARK_API_KEY"] }
-  config.action_mailer.delivery_method  = :postmark
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: 'example.com',
+    authentication: 'plain',
+    user_name: ENV["SECRET_USERNAME"],
+    password: ENV["SECRET_PASSWORD"],
+    enable_starttls_auto: true }
+  }
+  config.action_mailer.delivery_method  = :smtp
 end
