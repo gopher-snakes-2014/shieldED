@@ -14,7 +14,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-gem 'postmark-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -57,4 +56,8 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
+end
+
+group :production do
+  gem 'postmark-rails'
 end
