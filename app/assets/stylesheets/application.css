@@ -15,7 +15,9 @@
  *= require foundation_and_overrides
 
  */
-
+body {
+  font-family: Garamond;
+}
 .admin-container {
   background-color: #3A3A3B;
 }
@@ -53,9 +55,7 @@
   margin-top: 100px;
 }
 
-footer p {
-  color: white;
-}
+
 
 .report {
   height: 100%;
@@ -76,7 +76,6 @@ footer p {
 
 .report div li {
   list-style: none;
-
 }
 
 .selected_tag {
@@ -84,20 +83,17 @@ footer p {
   border-radius: 5px;
 }
 
-
 #button-close {
   margin-top: 15px;
 }
 
-
  header {
-  background-color: black;
+  background-color: white;
+  padding-top: 7%;
   /*background-color: rgba(255, 255, 255, .8);*/
-  position: fixed;
-  top: 0%;
+  text-align: center;
+  top: 10%;
   width: 100%;
-  border-bottom: 1px solid black;
-  padding-left: 10%;
   z-index: 100;
  }
 
@@ -106,5 +102,20 @@ footer p {
   font-size: 3.0em;
   color: white;
  }
+
+footer {
+  margin-top: 5%;
+  color: rgb(41, 163, 255);
+  text-align: center;
+}
+
+footer p {
+  color: black;
+}
+
+li {
+  margin-right: 5%;
+  display: inline-block;
+}
 
 

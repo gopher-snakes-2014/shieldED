@@ -1,26 +1,17 @@
-<ul class = "login-boxes">
 
-   <li class="about-shielded">
 
-    <h3>About Shield.ED<h3>
-    <h3>Happy Things...</h3>
+   <div class="navbar">
 
-  </li>
+    <ul>
+      <li>Home</li>
+      <li>Incident Report</li>
+      <li>Login</li>
+      <li>Logout</li>
+      <li>Local Resources</li>
+    </ul>
 
-  <li class = "student-parent-login">
+  </div>
 
-    <h3>Student/Parent Login</h3>
-    <%= form_tag login_path, { :class => "student-parent-login-form"} do %>
-        <%= label_tag(:username, "Are you a parent or student?") %>
-        <%= text_field_tag(:username) %>
-        <%= label_tag(:password_digest, "Enter your Key: ") %>
-        <%= password_field_tag(:password_digest) %>
-      <p class = "error"><%=flash[:error]%></p>
-      <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %>
 
-  </li>
-
-</ul>
 
 

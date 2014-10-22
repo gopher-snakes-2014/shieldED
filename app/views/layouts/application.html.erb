@@ -17,14 +17,28 @@
 
     <header>
 
-          <%=image_tag("shield3-01.png", width: "200")%>
-
+          <%=image_tag("shield_L-01.png", width: "400")%>
 
       <% if signed_in? %>
         <%= link_to("logout",logout_path) %>
       <% end %>
 
-      <a href="#" data-reveal-id="myModal">Admin</a>
+    </header>
+
+  </head>
+
+  <body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+
+  <footer>
+    <ul>
+      <li><a href="#" data-reveal-id="myModal">Admin</a></li>
+      <li><a href = "">Contact Us</a></li>
+      <li><p>Copyright 2014</p></li>
+    </ul>
+
       <div id="myModal" class="reveal-modal" data-reveal>
           <h3>Admin Login</h3>
           <%= form_tag({:controller => 'sessions', :action => 'create'}, { :class => "admin-login-form"}) do %>
@@ -38,12 +52,5 @@
         <a class="close-reveal-modal">&#215;</a>
       </div>
 
-    </header>
-
-  </head>
-
-  <body>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
-  </body>
+  </footer>
 </html>

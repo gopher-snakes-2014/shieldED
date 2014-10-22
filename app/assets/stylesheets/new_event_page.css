@@ -1,16 +1,16 @@
 .new_event_container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
   text-align: center;
-  width: 45%;
+  margin-top: 5%;
+  width: 60%;
   background-color: white;
   opacity: .9;
 }
 
 .new_event {
   margin: 0 auto;
-  width: 65%;
+  width: 60%;
 }
 
 

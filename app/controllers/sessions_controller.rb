@@ -11,8 +11,6 @@ class SessionsController < ApplicationController
       set_session
         if @user.username == "Admin"
             redirect_to admin_dashboard_path
-        elsif @user.username == "Student"
-          redirect_to student_dashboard_path
         else
           redirect_to parent_dashboard_path
         end
@@ -20,7 +18,6 @@ class SessionsController < ApplicationController
         login_error
         redirect_to root_path
     end
-
   end
 
 

@@ -1,0 +1,14 @@
+  <div class = "student-parent-login">
+
+    <h3>Login</h3>
+    <%= form_tag login_path, { :class => "student-parent-login-form"} do %>
+        <%= label_tag(:username, "Are you a parent or student?") %>
+        <%= text_field_tag(:username) %>
+        <%= label_tag(:password_digest, "Enter your Key: ") %>
+        <%= password_field_tag(:password_digest) %>
+      <p class = "error"><%=flash[:error]%></p>
+      <%= submit_tag("login", :class => "button")  %>
+    <% end %>
+
+  </div>
+
