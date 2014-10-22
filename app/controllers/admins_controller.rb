@@ -22,8 +22,10 @@ class AdminsController < ApplicationController
   end
 
   def bubbles
-    totals = Event.get_totals
-    render :json => {:totals => totals}
+    p "******* in the route"
+    totals_quarter = Event.get_month_totals('ducimus')
+      #, 'aliquem', 'suscipit', 'molestiae', 'repellat', 'voluptatem', 'occaecati', 'blanditiis', 'impedit'])
+    render :json => {:totals_quarter => totals_quarter}
   end
 
 end

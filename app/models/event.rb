@@ -33,8 +33,7 @@ class Event < ActiveRecord::Base
 
   def self.get_totals
     totals = []
-    p "$$$$$$$$$$$$$$"
-    p totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
+    totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
   end
 
   def self.find_physical
@@ -55,6 +54,21 @@ class Event < ActiveRecord::Base
 
   def self.find_exclusion
     where("details LIKE ?", "%repellat%").count  #147
+  end
+
+  def self.get_month_totals(word)
+    p "in the fuckkkkkd098345235789-89234-573 month"
+    num_months = 4
+    incidents_with_word
+    while num_months > 0
+      events = self.by_month(Time.now - num_months.month)
+      events = events.where("details LIKE ?", "%#{word}%").count
+      num_months -=1
+    end
+    p word
+    p events
+    p "###############"
+    events
   end
 
 end

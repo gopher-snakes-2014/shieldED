@@ -1,7 +1,7 @@
 google.setOnLoadCallback(drawChart);
 
   function drawChart() {
-
+      console.log("draw???")
       $.ajax({
         url: '/admins/dashboard/bubbles',
         }).done(function(serverData) {
@@ -26,7 +26,7 @@ google.setOnLoadCallback(drawChart);
         ]);
 
 
-        var options = {'title':'Monthly Frequencies by Calendar Year',
+        var options = {'title':'Monthly Frequencies by Most Recent Quarter',
                         width:1000,
                         height:500,
                         is3D: true,
@@ -34,8 +34,8 @@ google.setOnLoadCallback(drawChart);
                         colorAxis: {colors: ['blue', 'red']},
                         hAxis: {title: "Month"},
                         yAxis: {title: "Type"},
-                        hAxis: { ticks: [{v:0,f:""},{v:20,f:"Jan"},{v:40, f:"Feb"}, {v:60, f:"March"}, {v:80,f:"April"},{v:100, f:"May"}, {v:120, f:"June"}, {v:140,f:"July"}, {v:160, f:"Aug"}, {v:180, f:"Sept"}, {v:200, f:"Oct"}, {v:220, f:"Nov"}, {v:240, f:"Dec"}, {v:260,f:""} ] },
-                        vAxis: { ticks: [0,{v:100, f:'5'},{v:200, f:'10'},{v:300, f:'15'},{v:400, f:'20'},{v:500, f:'15'},{v:600, f:'20'},{v:700, f:'25'}]}
+                        hAxis: { ticks: [ {v:250, f:"June"}, {v:500,f:"July"}, {v:750, f:"Aug"}, {v:1000, f:"Sept"}, {v:1250, f:"Oct"}, {v:1500,f:""} ] },
+                        vAxis: { ticks: [{v:0,f:""},{v:100, f:'Physical'},{v:200, f:'Verbal'},{v:300, f:'Racist'},{v:400, f:'Cyberbully'},{v:500, f:'Exclusion'},{v:600, f:'Sexual'},{v:700, f:'Rumors'}, {v:800, f:'Transphobic'}, {v:900, f:'Homophobic'}]}
                       }
 
       var chart = new google.visualization.BubbleChart(document.getElementById('bubble-div'));
