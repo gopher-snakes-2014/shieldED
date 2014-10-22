@@ -1,12 +1,14 @@
 var TagsModel = function(eventID) {
   this.receivedTags = "PLACEHOLDER new tags updated from the server"
+  this.receivedUnTags = "PLACEHOLDER confirmed untags from the server"
   this.sendTags = []
+  this.sendUnTags = []
   this.eventID = eventID
 }
 
 TagsModel.prototype = {
 
-  fetch: function() {
+  addTags: function() {
     return $.ajax({
               url: '/events/'+this.eventID+'/event_tags/create',
               type: 'POST',
@@ -16,7 +18,21 @@ TagsModel.prototype = {
               this.receivedTags = data
             }.bind(this))
             .fail(function() {
-              console.log("tag fetch fail");
+              console.log("tag addTags fail");
+            })
+  },
+
+  removeTags: function() {
+    return $.ajax({
+              url: '/events/'+this.eventID+'/event_tags/untag',
+              type: 'DELETE',
+              data: {untags: this.sendUnTags},
+            })
+            .done(function(data) {
+              this.receivedUnTags = data
+            }.bind(this))
+            .fail(function() {
+              console.log("tag removeTags fail");
             })
   },
 
@@ -24,14 +40,22 @@ TagsModel.prototype = {
     $('.selected_tag').each(function(index, el) {
       this.sendTags.push(el.id)
     }.bind(this));
-  }
+    return this.sendTags
+  },
+
+  collectUnSelected: function() {
+    $('.unselected_tag').each(function(index, el) {
+      this.sendUnTags.push(el.id)
+    }.bind(this));
+    return this.sendUnTags
+  },
 
 }
 
-var TagsView = function(container,availableTags) {
-  this.container = container
-  this.eventID = container[0].id
-  this.availableTags = availableTags
+var TagsView = function(eventTagsContainer,availableTagsContainer) {
+  this.container = eventTagsContainer
+  this.eventID = eventTagsContainer[0].id
+  this.availableTags = availableTagsContainer
 }
 
 TagsView.prototype = {
@@ -40,12 +64,26 @@ TagsView.prototype = {
     this.container.append(newTags)
   },
 
+  renderUnTags: function(unTags) {
+    console.log('trying to render the untags')
+    this.availableTags.empty()
+    this.availableTags.append(unTags)
+  },
+
   clearUsedTags: function() {
     this.availableTags.find('.selected_tag').remove()
   },
 
+  clearUnTags: function() {
+    this.container.find('.unselected_tag').remove()
+  },
+
   toggleTags: function(id){
     $('#'+id).toggleClass('selected_tag')
+  },
+
+  toggleUnTags: function(id){
+    $('#'+id).toggleClass('unselected_tag')
   },
 
 }
@@ -60,18 +98,29 @@ TagsController.prototype = {
   bindEvents: function() {
     $('button').on('click', this.replaceTags.bind(this))
     this.view.availableTags.on('click', this.toggleSelection.bind(this))
+    this.view.container.on('click', this.toggleUnSelection.bind(this))
   },
 
   replaceTags: function() {
-    this.model.collectSelected()
     var that = this
-    $.when(this.model.fetch())
-      .then(function() {
-        var receivedTags = that.model.receivedTags
-        that.view.renderNewTags(receivedTags);
-        that.view.clearUsedTags();
-        }
-      );
+    if (this.model.collectSelected().length > 0) {
+      $.when(this.model.addTags())
+          .then(function() {
+            var receivedTags = that.model.receivedTags
+            that.view.renderNewTags(receivedTags);
+            that.view.clearUsedTags();
+            }
+          );
+    }
+    if (this.model.collectUnSelected().length > 0) {
+      $.when(this.model.removeTags())
+          .then(function() {
+            var receivedUnTags = that.model.receivedUnTags
+            that.view.renderUnTags(receivedUnTags);
+            that.view.clearUnTags();
+            }
+          );
+    }
   },
 
   toggleSelection: function(clickEvent){
@@ -79,9 +128,14 @@ TagsController.prototype = {
     this.view.toggleTags(tagId)
   },
 
+  toggleUnSelection: function(clickEvent){
+    var tagId = clickEvent.target.id
+    this.view.toggleUnTags(tagId)
+  },
+
 }
 
-var view = new TagsView($('.event_tags_container'),$('.all_tags'))
+var view = new TagsView($('.event_tags_container'),$('.available_tags_container'))
 var model = new TagsModel(view.eventID)
 var controller = new TagsController(model,view)
 
