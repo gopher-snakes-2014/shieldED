@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # resources :users
 
   root 'users#index'
   post '/sessions/login'                 => 'sessions#create',                  :as => 'login'
@@ -8,8 +7,8 @@ Rails.application.routes.draw do
   get   '/users/parents/dashboard'        => 'users#parent_dashboard',        :as => 'parent_dashboard'
   get   '/users/students/dashboard'       => 'users#student_dashboard',       :as => 'student_dashboard'
 
-  get   '/admins/dashboard'               => 'admins#admin_dashboard',        :as => 'admin_dashboard'
-  get   '/admins/dashboard/search'        => 'admins#search',                 :as => 'search'
+  get     '/admins/dashboard'               => 'admins#admin_dashboard',        :as => 'admin_dashboard'
+  get     '/admins/dashboard/search'        => 'admins#search',                 :as => 'search'
 
   get '/admins/dashboard/pie'          => 'admins#pie'
   get '/admins/dashboard/bubbles'          => 'admins#bubbles'
@@ -20,7 +19,9 @@ Rails.application.routes.draw do
   get   '/events/:id'                     => 'events#show',                   :as => "show_event"
   post  '/events/:id/event_tags/create'   => 'event_tags#create',             :as => "event_tags_create"
 
-  get   '/tags/show'                      => 'tags#show',                    :as => "show_tags"
+  get     '/tags/show'                      => 'tags#show',                     :as => "show_tags"
 
+  post    '/events/:id/event_tags/create'   => 'event_tags#create',             :as => "event_tags_create"
+  delete  '/events/:id/event_tags/untag'    => 'event_tags#delete',             :as => "event_tags_delete"
 
 end
