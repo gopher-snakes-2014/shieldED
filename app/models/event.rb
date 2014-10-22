@@ -33,8 +33,7 @@ class Event < ActiveRecord::Base
 
   def self.get_totals
     totals = []
-    p "$$$$$$$$$$$$$$"
-    p totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
+    totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
   end
 
   def self.find_physical
@@ -55,6 +54,12 @@ class Event < ActiveRecord::Base
 
   def self.find_exclusion
     where("details LIKE ?", "%repellat%").count  #147
+  end
+
+  def untag(untags)
+    untags.each do |untag|
+      self.event_tags.find(untag.to_i).delete
+    end
   end
 
 end
