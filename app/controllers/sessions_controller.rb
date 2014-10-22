@@ -22,7 +22,6 @@ class SessionsController < ApplicationController
 
   def show_login_partial
     render partial:'login'
-
   end
 
 

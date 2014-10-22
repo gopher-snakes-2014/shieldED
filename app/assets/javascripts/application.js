@@ -27,17 +27,17 @@ $(document).ready(function() {
       data: that.serialize()
     }).done(function(server_data) {
       console.log("SUCCESS")
-      $(".placeholder").html(server_data)
+      $(".placeholder").html(server_data).fadeIn(300)
     }).fail(function() {
       console.log("FAIL")
     })
-  })
+  });
 
    $(".report-event").on("click", function(e) {
     var that = $(this)
     e.preventDefault();
     $.ajax({
-      url: '/sessions/login',
+      url: '/events/new',
       type: 'GET',
       data: that.serialize()
     }).done(function(server_data) {
@@ -46,5 +46,13 @@ $(document).ready(function() {
     }).fail(function() {
       console.log("FAIL")
     })
-  })
+  });
+
+
+$(document).on("ajax:success", '.new_event', function(e, data) {
+  console.log("SUCCESS")
+  $(".placeholder").html(data)
+}).on("ajax:error", function(e, xhr, status, error) {
+  console.log("FAIL")
 })
+});

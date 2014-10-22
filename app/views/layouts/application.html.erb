@@ -35,7 +35,7 @@
             <% end %>
           </li>
           <li><a href = "mailto:andrew.mcclellan3@gmail.com">Contact Us</a></li>
-          <li> <%= link_to("Report an Incident", , class: "report-event")%></a></li>
+          <li> <%= link_to("Report an Incident", new_event_path, class: "report-event")%></a></li>
           <li><a href = "">Local Resources</a></li>
         </ul>
       </div>
@@ -45,7 +45,7 @@
       <%= javascript_include_tag "application" %>
 
   </body>
-
+<!-- parent div -->
   <div class = "placeholder">
     <p>About Shield.ED<p>
   </div>

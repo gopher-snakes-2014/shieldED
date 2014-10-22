@@ -1,17 +1,4 @@
-.navbar {
-  width: 80%;
-  text-align: center;
-  height: 10vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  border-top: 2px solid rgb(41, 163, 255);
-  border-bottom: 2px solid rgb(41, 163, 255);
-  background-color: white;
-  opacity: .9;
-  padding-top: 2%;
-  color: gray;
-}
+
 
 .login-boxes {
   display: flex;
@@ -67,13 +54,7 @@
   -o-background-size: cover;
  }*/
 
- .home-navbar-links a:visited {
-  color: #393939;
- }
 
-  .home-navbar-links a {
-  color: #393939;
- }
 
  .error {
   color: red;
