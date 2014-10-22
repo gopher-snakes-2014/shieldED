@@ -16,7 +16,10 @@
     <%= csrf_meta_tags %>
 
     <header>
-      <h1>Shield.ED</h1>
+
+          <%=image_tag("shield3-01.png", width: "200")%>
+
+
       <% if signed_in? %>
         <%= link_to("logout",logout_path) %>
       <% end %>

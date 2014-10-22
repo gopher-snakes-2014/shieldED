@@ -1,22 +1,20 @@
+	<h2>Event Summary</h2>
 
-
-<h2>Event Summary</h2>
-
-<%= form_for :event, url: events_new_path, method: :post, html: { class: "new_event" } do |f| %>
-	<%= f.label 			:details, 			"What happened?" 															%>
-	<%= f.text_area 	:details 												 															%>
-	<%= f.label 			:date, 					"When did this event occur?" 									%>
-	<%= f.date_field 	:date 																												%>
-	<%= f.label 			:location, 			"Where did this event occur?" 								%>
-	<%= f.text_field 	:location 																										%>
-	<%= f.label 			:offender, 			"Who was involved?" 													%>
-	<%= f.text_field 	:offender 																										%>
-	<%= f.label 			:submitter, 		"(OPTIONAL) Include your name for follow-up:" %>
-	<%= f.text_field 	:submitter 																										%>
-	<%= f.label  			:event_photo,		"Upload a Photo from the Incident:"						%>
-	<%= f.file_field	:event_photo																									%>
-	<%= f.submit "Submit", :class => "button [radius round]"		%>
-<% end %>
+	<%= form_for :event, url: events_new_path, method: :post, html: { class: "new_event" } do |f| %>
+		<%= f.label 			:details, 			"What happened?" 															%>
+		<%= f.text_area 	:details 												 															%>
+		<%= f.label 			:date, 					"When did this event occur?" 									%>
+		<%= f.date_field 	:date 																												%>
+		<%= f.label 			:location, 			"Where did this event occur?" 								%>
+		<%= f.text_field 	:location 																										%>
+		<%= f.label 			:offender, 			"Who was involved?" 													%>
+		<%= f.text_field 	:offender 																										%>
+		<%= f.label 			:submitter, 		"(OPTIONAL) Include your name for follow-up:" %>
+		<%= f.text_field 	:submitter 																										%>
+		<%= f.label  			:event_photo,		"Upload a Photo from the Incident:"						%>
+		<%= f.file_field	:event_photo																									%>
+		<%= f.submit "Submit", :class => "button [radius round]"		%>
+	<% end %>
 
 
 
