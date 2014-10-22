@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
 
   def tag(tags)
     tags.each do |tag|
-      self.event_tags.create(tag_id: tag.to_i)
+      event_tags.create(tag_id: tag)
     end
   end
 
@@ -58,7 +58,7 @@ class Event < ActiveRecord::Base
 
   def untag(untags)
     untags.each do |untag|
-      self.event_tags.find(untag.to_i).delete
+      event_tags.find(untag).delete
     end
   end
 
