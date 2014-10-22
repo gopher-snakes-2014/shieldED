@@ -180,10 +180,7 @@ footer p {
   float: right;
 }
 
-.stasher {
-  visibility: hidden;
+.linker {
+
 }
 
-.show-event-details {
-  overflow: scroll;
-}

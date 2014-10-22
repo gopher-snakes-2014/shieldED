@@ -26,7 +26,7 @@ google.setOnLoadCallback(drawChart);
         ]);
 
 
-        var options = {'title':'Frequency of Reports by Month by Calendar Year',
+        var options = {'title':'Monthly Frequencies by Calendar Year',
                         width:1000,
                         height:500,
                         is3D: true,
@@ -35,7 +35,7 @@ google.setOnLoadCallback(drawChart);
                         hAxis: {title: "Month"},
                         yAxis: {title: "Type"},
                         hAxis: { ticks: [{v:0,f:""},{v:20,f:"Jan"},{v:40, f:"Feb"}, {v:60, f:"March"}, {v:80,f:"April"},{v:100, f:"May"}, {v:120, f:"June"}, {v:140,f:"July"}, {v:160, f:"Aug"}, {v:180, f:"Sept"}, {v:200, f:"Oct"}, {v:220, f:"Nov"}, {v:240, f:"Dec"}, {v:260,f:""} ] },
-                        yAxis: { ticks: [5, 10, 15, 20, 25, 30, 60, 65]}
+                        vAxis: { ticks: [0,{v:100, f:'5'},{v:200, f:'10'},{v:300, f:'15'},{v:400, f:'20'},{v:500, f:'15'},{v:600, f:'20'},{v:700, f:'25'}]}
                       }
 
       var chart = new google.visualization.BubbleChart(document.getElementById('bubble-div'));

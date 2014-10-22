@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
       incidents.uniq!
       return incidents
     else
-      return search_item
+      return error  #implement this
     end
 
   end
