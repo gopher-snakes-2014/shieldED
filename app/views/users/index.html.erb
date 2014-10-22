@@ -1,31 +1,26 @@
+<ul class = "login-boxes">
 
-  <header>
-    <h1>Shield.ED</h1>
-  </header>
+   <li class="about-shielded">
 
-  <ul class = "login-boxes">
+    <h3>About Shield.ED<h3>
+    <h3>Happy Things...</h3>
 
-    <li class = "student-parent-login">
-      <h3>Student/Parent Login</h3>
-      <%= form_tag({:action => 'process_login_sp'}, { :class => "student-parent-login-form"}) do %>
-        <%= label_tag("5 Digit Key: ") %>
-        <%= password_field_tag(:password_hash) %>
-        <p class = "error"><%=session[:error]%></p>
-        <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %>
   </li>
 
-    <li class="user-login">
-      <h3>Admin Login</h3>
-      <%= form_tag({:action => 'process_login_admin'}, { :class => "admin-login-form"}) do %>
-        <%= label_tag(:username, "Username: ") %>
+  <li class = "student-parent-login">
+
+    <h3>Student/Parent Login</h3>
+    <%= form_tag login_path, { :class => "student-parent-login-form"} do %>
+        <%= label_tag(:username, "Are you a parent or student?") %>
         <%= text_field_tag(:username) %>
-        <%= label_tag(:password_hash, "Password: ") %>
-        <%= password_field_tag(:password_hash) %>
-        <p class = "error"><%=session[:error]%></p>
-        <%= submit_tag("login", :class => "button [radius button]")  %>
-    <% end %><<<<<<< HEAD
-    </li>
+        <%= label_tag(:password_digest, "Enter your Key: ") %>
+        <%= password_field_tag(:password_digest) %>
+      <p class = "error"><%=flash[:error]%></p>
+      <%= submit_tag("login", :class => "button [radius button]")  %>
+    <% end %>
+
+  </li>
+
 </ul>
 
 

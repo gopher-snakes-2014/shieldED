@@ -1,5 +1,7 @@
 class AdminsController < ApplicationController
 
+  http_basic_authenticate_with :name => "Admin", :password => "1234"
+
   def admin_dashboard
 
     @events = Event.all
