@@ -46,7 +46,6 @@ bindButtonClose = function() {
 bindLinker = function() {
   $(".linker").on('click', function(event) {
     event.preventDefault();
-    console.log('about to ajiz')
     $.ajax({
       url: '/events/'+this.id+'/show_partial',
     })

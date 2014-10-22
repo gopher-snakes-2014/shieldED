@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
       incidents.uniq!
       return incidents
     else
-      return error  #implement this
+      return "not a valid search"
     end
 
   end
@@ -56,19 +56,19 @@ class Event < ActiveRecord::Base
     where("details LIKE ?", "%repellat%").count  #147
   end
 
-  def self.get_month_totals(word)
-    p "in the fuckkkkkd098345235789-89234-573 month"
-    num_months = 4
-    incidents_with_word
-    while num_months > 0
-      events = self.by_month(Time.now - num_months.month)
-      events = events.where("details LIKE ?", "%#{word}%").count
-      num_months -=1
-    end
-    p word
-    p events
-    p "###############"
-    events
+  def self.get_month_totals
+    words = ['ducimus','aliquam', 'suscipit', 'molestiae', 'repellat', 'voluptatem', 'occaecati', 'blanditiis', 'impedit']
+    totals = []
+    words.each do |word|
+      num = 4
+        while num >= 0
+          events = Event.by_calendar_month(Time.now - num.month)
+          events = events.where("details LIKE ?", "%#{word}%").count
+          totals << events
+          num -= 1
+        end
+      end
+      totals
   end
 
 end
