@@ -1,5 +1,5 @@
 <ul class="event_tags inline-list">
-  <% @event.tags.each do |tag| %>
-  <li>#<%= tag.tag_name %></li>
+  <% @event.event_tags.each do |event_tag| %>
+  <li id="<%=event_tag.id%>" >#<%= event_tag.tag.tag_name %></li>
   <% end %>
 </ul>

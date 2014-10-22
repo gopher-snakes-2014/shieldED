@@ -7,5 +7,7 @@
     <%= render 'event_tags/this_event_tags', locals: @event %>
   </div>
 
-  <%= render 'tags/show', locals: @event %>
+  <div class="available_tags_container">
+    <%= render 'tags/show', locals: @event %>
+  </div>
 </div>
