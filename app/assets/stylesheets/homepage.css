@@ -41,7 +41,6 @@
   margin-right: auto;
   border-radius: 5px;
   background-color: white;
-  opacity: .9;
 }
 
 .about-shielded h1{
@@ -67,6 +66,14 @@
   -moz-background-size: cover;
   -o-background-size: cover;
  }*/
+
+ .home-navbar-links a:visited {
+  color: #393939;
+ }
+
+  .home-navbar-links a {
+  color: #393939;
+ }
 
  .error {
   color: red;

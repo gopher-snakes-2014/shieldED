@@ -20,6 +20,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def show_login_partial
+    render partial:'login'
+
+  end
+
 
   def logout
     session[:current_user_id] = nil

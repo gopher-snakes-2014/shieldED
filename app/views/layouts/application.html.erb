@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.css"/>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.css"/>
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-     google.load("visualization", "1", {packages:["corechart"]});
-     </script>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <header>
+      <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+       google.load("visualization", "1", {packages:["corechart"]});
+       </script>
+      <%= stylesheet_link_tag    "application" %>
+      <%= javascript_include_tag "vendor/modernizr" %>
+      <%= csrf_meta_tags %>
 
-          <%=image_tag("shield_L-01.png", width: "400")%>
-
-      <% if signed_in? %>
-        <%= link_to("logout",logout_path) %>
-      <% end %>
-
-    </header>
+      <header>
+            <%=image_tag("shield_L-01.png", width: "400")%>
+      </header>
 
   </head>
 
   <body>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+
+      <div class="navbar">
+        <ul class = "home-navbar-links">
+          <li>
+            <% if !signed_in? %>
+              <%= link_to("Login", login_partial_path, class: "Login_Link") %></li>
+            <% end %>
+            <% if signed_in? %>
+              <%= link_to("Logout",logout_path) %>
+            <% end %>
+          </li>
+          <li><a href = "mailto:andrew.mcclellan3@gmail.com">Contact Us</a></li>
+          <li> <%= link_to("Report an Incident", , class: "report-event")%></a></li>
+          <li><a href = "">Local Resources</a></li>
+        </ul>
+      </div>
+
+      <%= yield %>
+
+      <%= javascript_include_tag "application" %>
+
   </body>
+
+  <div class = "placeholder">
+    <p>About Shield.ED<p>
+  </div>
 
   <footer>
     <ul>
       <li><a href="#" data-reveal-id="myModal">Admin</a></li>
-      <li><a href = "">Contact Us</a></li>
       <li><p>Copyright 2014</p></li>
     </ul>
 
