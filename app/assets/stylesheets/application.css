@@ -88,3 +88,19 @@ footer p {
 #button-close {
   margin-top: 15px;
 }
+
+ header {
+  background-color: rgba(57, 57, 57, .8);
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding-left: 10%;
+  z-index: 100;
+ }
+
+ header h1 {
+  font-family: robofan free;
+  font-size: 3.0em;
+  color: white;
+ }

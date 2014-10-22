@@ -16,6 +16,4 @@ class UsersController < ApplicationController
     @event = Event.new
   end
 
-
-
 end

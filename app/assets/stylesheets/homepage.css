@@ -60,20 +60,7 @@
   -o-background-size: cover;
  }
 
- header {
-  background-color: rgba(57, 57, 57, .8);
-  position: fixed;
-  top: 0%;
-  width: 100%;
-  border-bottom: 1px solid black;
-  padding-left: 10%;
- }
 
- header h1 {
-  font-family: robofan free;
-  font-size: 3.0em;
-  color: white;
- }
 
  .error {
   color: red;
