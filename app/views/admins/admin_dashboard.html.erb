@@ -1,7 +1,7 @@
 <div class="admin-container">
   <div class="row">
     <div class="large-7 columns">
-      <h1>Admin Report Detail</h1>
+      <h1>Administration Report Detail</h1>
     </div>
   <div class="large-9 columns">
     <ul class="right button-group">
@@ -12,22 +12,19 @@
   </div>
 </div>
 
-
-<div class="row">
+<div class="row" id = "slim">
   <div class="large-12 columns">
     <div id="slider">
       <ul class="orbit" data-orbit>
        <li>
-         <%=image_tag("graph1.png" )%>
-         <img height = "15">
+         <div id="chart-div"></div>
        </li>
        <li class="active">
-         <%=image_tag("bar-char.png" )%>
-         <img height = "15">
+         <div id="bubble-div"</div>
        </li>
        <li>
          <%=image_tag("sample.png" )%>
-         <img height = "15">
+         <img height = "10">
        </li>
       </ul>
     </div>
@@ -44,7 +41,7 @@
         <ul >
           <%@latest.each do |event|%>
             <li class= "show-event">
-              <%= link_to "#{event.id}'. '#{event.date} : #{event.details[0..10]}",      :remote => true%>
+              <%= link_to  "#{event.id}'. '#{event.date} : #{event.details[0..10]}",   show_event_partial_path(event.id), :remote => true%>
             </li>
           <%end%>
         </ul>
@@ -61,10 +58,13 @@
           </p>
           <% end %>
         </div>
-          <div class="report">
-            <a href="#" class="button [tiny small large]" id="button-close">Close Search</a>
-            <ul class="search-results"></ul>
-          </div>
+        <div class="report">
+          <a href="#" class="button [tiny small large]" id="button-close">Close Search</a>
+          <ul class="search-results"></ul>
+        </div>
+        <div class="show-event-details">
+
+        </div>
       </div>
     </div>
 

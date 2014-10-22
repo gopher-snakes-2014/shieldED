@@ -17,6 +17,12 @@ class EventsController < ApplicationController
     @tags = Tag.all
   end
 
+  def show_partial
+    @event = Event.find params[:id]
+    @tags = Tag.all
+    render partial: 'show'
+  end
+
   private
 
   def event_params

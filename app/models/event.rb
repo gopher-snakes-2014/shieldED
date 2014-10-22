@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
       incidents.uniq!
       return incidents
     else
-      return search_item
+      return error  #implement this
     end
 
   end
@@ -29,6 +29,32 @@ class Event < ActiveRecord::Base
     tags.each do |tag|
       self.event_tags.create(tag_id: tag.to_i)
     end
+  end
+
+  def self.get_totals
+    totals = []
+    p "$$$$$$$$$$$$$$"
+    p totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
+  end
+
+  def self.find_physical
+    where("details LIKE ?", "%impedit%").count  #148
+  end
+
+  def self.find_verbal
+    where("details LIKE ?", "%blanditiis%").count  #151
+  end
+
+  def self.find_rumor
+    where("details LIKE ?", "%suscipit%").count #162
+  end
+
+  def self.find_cyber
+    where("details LIKE ?", "%voluptatem%").count  #546
+  end
+
+  def self.find_exclusion
+    where("details LIKE ?", "%repellat%").count  #147
   end
 
 end
