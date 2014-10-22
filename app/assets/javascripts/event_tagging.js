@@ -38,6 +38,7 @@ TagsModel.prototype = {
 
   collectSelected: function() {
     $('.selected_tag').each(function(index, el) {
+      this.sendTags = []
       this.sendTags.push(el.id)
     }.bind(this));
     return this.sendTags
@@ -45,6 +46,7 @@ TagsModel.prototype = {
 
   collectUnSelected: function() {
     $('.unselected_tag').each(function(index, el) {
+      this.sendUnTags = []
       this.sendUnTags.push(el.id)
     }.bind(this));
     return this.sendUnTags
@@ -56,6 +58,7 @@ var TagsView = function(eventTagsContainer,availableTagsContainer) {
   this.container = eventTagsContainer
   this.eventID = eventTagsContainer[0].id
   this.availableTags = availableTagsContainer
+  this.button = $('button')
 }
 
 TagsView.prototype = {
@@ -65,7 +68,6 @@ TagsView.prototype = {
   },
 
   renderUnTags: function(unTags) {
-    console.log('trying to render the untags')
     this.availableTags.empty()
     this.availableTags.append(unTags)
   },
@@ -96,9 +98,9 @@ var TagsController = function(model,view) {
 TagsController.prototype = {
 
   bindEvents: function() {
-    $('button').on('click', this.replaceTags.bind(this))
     this.view.availableTags.on('click', this.toggleSelection.bind(this))
     this.view.container.on('click', this.toggleUnSelection.bind(this))
+    this.view.button.on('click', this.replaceTags.bind(this))
   },
 
   replaceTags: function() {
