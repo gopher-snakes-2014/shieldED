@@ -4,7 +4,7 @@ feature "Events" do
     allow_any_instance_of(EventsController).to receive(:current_user).and_return(@user)
 
     visit '/events/new'
-    expect(page).to have_content('Record Event')
+    expect(page).to have_content('Event Summary')
 
     within(".new_event") do
     	fill_in "event_details", with: "I saw mommy kissing santa claus!"

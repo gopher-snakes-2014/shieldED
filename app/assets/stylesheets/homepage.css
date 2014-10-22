@@ -1,0 +1,67 @@
+.about-shielded {
+  width: 35%;
+  text-align: center;
+  border: 1px solid black;
+  margin-right: 5%;
+  border-radius: 5px;
+  background-color: white;
+  opacity: .9;
+}
+
+.login-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top: 20%;
+  font-family: Garamond;
+}
+
+.login-boxes h3 {
+  font-family: Garamond;
+}
+/*.user-login form {
+  width: 50%;
+  margin: 0 auto;
+  font-size: .1em;
+  color: white;
+}*/
+
+.student-parent-login {
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  opacity: .9;
+}
+
+.about-shielded h1{
+  color: white;
+}
+
+.student-parent-login form {
+  width: 50%;
+  margin: 0 auto;
+  font-size: .1em;
+  color: white;
+}
+
+.button [radius button]{
+  background-color: #0066CC;
+  border: 1px solid black;
+  color: white;
+}
+
+ body {
+  background: url(http://oi58.tinypic.com/21l79zd.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+ }
+
+
+
+ .error {
+  color: red;
+ }

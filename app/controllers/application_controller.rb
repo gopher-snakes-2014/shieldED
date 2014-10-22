@@ -10,24 +10,18 @@ class ApplicationController < ActionController::Base
     @user ||= session[:current_user_id] && User.find(session[:current_user_id])
   end
 
-  def clear_session_error
-    session[:error] = nil
-  end
-
   def set_session
     session[:current_user_id] = @user.id
   end
 
-  def username_error
-    session[:error] = "Invalid Username"
+  def admin_login_error
+    flash[:error] = "Invalid Username or Password"
   end
 
-  def password_error
-    session[:error] = "Invalid Password"
+  def login_error
+    flash[:error] = "Invalid Key"
   end
 
-  def invalid_key_error
-    session[:error] = "Invalid Key"
-  end
+  helper_method :current_user, :signed_in
 
 end
