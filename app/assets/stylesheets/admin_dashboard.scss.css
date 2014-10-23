@@ -105,12 +105,17 @@ a {
   width: 90%;
 }
 
+.hide1 {
+  visibility: "hidden";
+}
 
+.hide2 {
+  visibility: "hidden";
+}
 
-
-
-
-
+.hide3 {
+  visibility: "hidden";
+}
 
 
 

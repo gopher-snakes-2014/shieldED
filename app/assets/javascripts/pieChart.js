@@ -27,7 +27,7 @@ google.setOnLoadCallback(drawChart);
                         is3D: true,
                         fontSize: 30,
                         slices: {4: {offset: 0.2},
-                                 3: {offset: 0.4},
+                                 3: {offset: 0.2},
                               },};
 
       var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));

@@ -11,7 +11,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+      <title><%= content_for?(:title) ? yield(:title) : "ShieldED" %></title>
 
       <%= stylesheet_link_tag    "application" %>
       <%= javascript_include_tag "vendor/modernizr" %>
@@ -38,7 +38,15 @@
 
           <li><a href = "">Search Events</a></li>
           <li><a href = "">Recent Events</a></li>
-          <li><a href = "">Reports</a></li>
+          <li ><a href = "#" data-dropdown="hover1" data-options="is_hover:true" class = 'custom-dropdown'>Reports</a>
+            <ul id="hover1" class="f-dropdown" data-dropdown-content>
+              <li>
+                <a href="#" class = "hide1">Pie Chart Keyword</a>
+                <a href="#" class = "hide2">Bubble Frequency Repeat Offense</a>
+                <a href="#" class = "hide3">Line Quarterly</a>
+              </li>
+            </ul>
+          </li>
           <li><a href = "">Support</a></li>
           <li>
             <% if signed_in? %>
@@ -51,24 +59,26 @@
 
   <div class = "admin-placeholder">
     <div class = "admin-introduction">
-      <p>Admin Placeholder</p>
       <div class="row" id = "slim">
         <div class="large-12 columns">
           <div id="slider">
-            <ul class="orbit" data-orbit>
+            <ul class= "admin-stack">
+            <!-- class="orbit" data-orbit -->
              <li>
                <div id="pie-chart"></div>
              </li>
-             <li class="active">
+             <li>
+              <!-- class="active"> -->
                <div id="bubble-chart"></div>
-              </li>
+             </li>
              <li>
               <div id="line-chart"></div>
-            </li>
+             </li>
             </ul>
           </div>
-    </div>
+        </div>
           <hr/>
+    </div>
   </div>
 
   <div class = "admin-footer">

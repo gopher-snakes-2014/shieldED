@@ -93,6 +93,18 @@ class Event < ActiveRecord::Base
       radii
   end
 
+  def self.get_quarter
+    num = 4
+    totals = []
+      while num >= 0
+        p num
+        events = Event.by_calendar_month(Time.now - num.month)
+        totals << events.count
+        num -= 1
+      end
+    totals
+  end
+
   def tag(new_tag_ids)
     new_tag_ids.each do |tag|
       event_tags.create(tag_id: tag)
@@ -103,7 +115,6 @@ class Event < ActiveRecord::Base
     untag_ids.each do |untag|
       event_tags.find(untag).delete
     end
-
   end
 
 end
