@@ -11,6 +11,6 @@ feature "Events" do
     	click_button 'Submit'
     end
 
-    expect(page).to have_content('Thank you!')
+    expect(page).to have_content('Submission Received')
   end
 end

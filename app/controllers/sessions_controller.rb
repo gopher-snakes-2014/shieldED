@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password_digest])
       set_session
         if @user.username == "Admin"
-            redirect_to admin_dashboard_path
+          redirect_to admin_dashboard_path
         else
           redirect_to parent_dashboard_path
         end

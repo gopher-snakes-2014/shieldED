@@ -7,7 +7,7 @@ class AdminsController < ApplicationController
     @events = Event.all
     @total = @events.length
     @latest = Event.last(5)
-
+    render partial:'admin_dashboard'
   end
 
   def search
