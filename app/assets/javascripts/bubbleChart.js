@@ -7,7 +7,6 @@
         url: '/admins/dashboard/bubbles',
         }).done(function(serverData) {
           fillBubbleChart(serverData);
-          console.log(serverData);
         }).fail(function(){
           console.log("fail");
       }),

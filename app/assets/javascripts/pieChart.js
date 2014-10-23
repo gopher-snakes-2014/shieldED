@@ -22,10 +22,13 @@ google.setOnLoadCallback(drawChart);
 
         var options = {'title':'Reports of Bullying based on Keyword',
                         width:900,
-                        height:500,
+                        height:400,
                         colors: ['#00CCCC','#669933', '#66FF66', '#339999', '#99CCCC' ],
                         is3D: true,
-                        fontSize: 30}
+                        fontSize: 30,
+                        slices: {4: {offset: 0.2},
+                                 3: {offset: 0.4},
+                              },};
 
       var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
       chart.draw(data, options);

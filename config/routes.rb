@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get     '/admins/dashboard/pie'           => 'admins#pie'
   get     '/admins/dashboard/bubbles'       => 'admins#bubbles'
+  get     '/admins/dashboard/lines'       => 'admins#lines'
 
   get     '/events/new'                     => 'events#new',                    :as => "new_event"
   post    '/events/new'                     => 'events#create'

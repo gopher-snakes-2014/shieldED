@@ -32,4 +32,9 @@ class AdminsController < ApplicationController
     offenders = Event.get_offender_names
   end
 
+  def lines
+    totals = Event.past_fortnight
+    render :json => {:totals => totals}
+  end
+
 end

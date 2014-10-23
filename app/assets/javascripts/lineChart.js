@@ -3,12 +3,14 @@ google.setOnLoadCallback(drawChart);
   function drawChart() {
 
       $.ajax({
-        url: '/admins/dashboard/pie',
+        url: '/admins/dashboard/lines',
         }).done(function(serverData) {
-          fillPieChart(serverData);
+          // fillLineChart(serverData);
+          console.log("success")
+          console.log(serverData)
       });
 
-      fillPieChart = function(serverData) {
+      fillLineChart = function(serverData) {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Type');
         data.addColumn('number', 'Total');
@@ -22,12 +24,12 @@ google.setOnLoadCallback(drawChart);
 
         var options = {'title':'Reports of Bullying based on Keyword',
                         width:900,
-                        height:500,
-                        colors: ['#00CCCC','#669933', '#66FF66', '#339999', '#99CCCC' ],
+                        height:400,
+                        colors: ['#00CCCC','#669933' ],
                         is3D: true,
                         fontSize: 30}
 
-      var chart = new google.visualization.LineChart(document.getElementById('bar-chart'));
+      var chart = new google.visualization.LineChart(document.getElementById('line-chart'));
       chart.draw(data, options);
       }
     }
