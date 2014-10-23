@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  root    'users#index'
-  post    '/sessions/login'                 => 'sessions#create',                  :as => 'login'
-  get     '/sessions/logout'                => 'sessions#logout',                  :as => 'logout'
+  root 'users#index'
+  get '/sessions/login'                  => 'sessions#show_login_partial',       :as => 'login_partial'
+  post '/sessions/login'                 => 'sessions#create',                  :as => 'login'
+  get  '/sessions/logout'                => 'sessions#logout',                  :as => 'logout'
+
 
   get     '/users/parents/dashboard'        => 'users#parent_dashboard',        :as => 'parent_dashboard'
   get     '/users/students/dashboard'       => 'users#student_dashboard',       :as => 'student_dashboard'

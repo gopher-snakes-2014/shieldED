@@ -1,0 +1,22 @@
+.acknowledgement-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  margin-top: 5%;
+  text-align: center;
+  width: 60%;
+  background-color: white;
+  opacity: .9;
+}
+
+.call911 {
+  color: red;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.submission_received {
+  color: black;
+  text-decoration: underline;
+  margin-bottom: 1%;
+}
