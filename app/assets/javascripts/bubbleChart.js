@@ -73,7 +73,7 @@
                         hAxis: { ticks: [ {v:150, f:''},{v:250, f:"June"}, {v:500,f:"July"}, {v:750, f:"Aug"}, {v:1000, f:"Sept"}, {v:1250, f:"Oct"}, {v:1500,f:""} ] },
                         vAxis: { ticks: [{v:0,f:""},{v:100, f:'Physical'},{v:200, f:'Verbal'},{v:300, f:'Racist'},{v:400, f:'Cyberbully'},{v:500, f:'Exclusion'},{v:600, f:'Sexual'},{v:700, f:'Rumors'}, {v:800, f:'Transphobic'}, {v:900, f:'Homophobic'}, {v:990, f:''}]},
 
-                        colorAxis: {colors: ['#afc0ed', '#ff0000']},
+                        colorAxis: {colors: ['blue', '#ff0000']},
                         sizeAxis: {minValue: 0, maxSize: 25},
 
                       }
