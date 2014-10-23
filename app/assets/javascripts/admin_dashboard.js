@@ -32,6 +32,7 @@ bindLinkToEvent = function() {
     $(".show-event-details").empty().html(data)
     $(".admin-search").hide(400);
     $(".show-event-details").show(400);
+    activateEventTagging()
   });
   $(".search-form").on('ajax:error', function(e, data) {console.log(data)});
 };

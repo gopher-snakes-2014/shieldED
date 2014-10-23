@@ -103,6 +103,7 @@ class Event < ActiveRecord::Base
     untag_ids.each do |untag|
       event_tags.find(untag).delete
     end
+
   end
 
 end
