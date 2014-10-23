@@ -37,16 +37,16 @@ TagsModel.prototype = {
   },
 
   collectSelected: function() {
+    this.sendTags = []
     $('.selected_tag').each(function(index, el) {
-      this.sendTags = []
       this.sendTags.push(el.id)
     }.bind(this));
     return this.sendTags
   },
 
   collectUnSelected: function() {
+    this.sendUnTags = []
     $('.unselected_tag').each(function(index, el) {
-      this.sendUnTags = []
       this.sendUnTags.push(el.id)
     }.bind(this));
     return this.sendUnTags
