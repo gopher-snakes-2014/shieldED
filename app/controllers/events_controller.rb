@@ -1,16 +1,16 @@
 class EventsController < ApplicationController
   include ApplicationHelper
 
-	def new
-		@event = Event.new
-		render partial: 'new', locals: { event: @event }
-	end
+  def new
+    @event = Event.new
+    render partial: 'new', locals: { event: @event }
+  end
 
-	def create
-	 @event = Event.create( event_params )
-   UserMailer.event_notification(@event).deliver
-   render "acknowledgement"
-	end
+  def create
+    @event = Event.create( event_params )
+    UserMailer.event_notification(@event).deliver
+    render "acknowledgement"
+  end
 
   def show
     @event = Event.find params[:id]

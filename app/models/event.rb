@@ -22,19 +22,11 @@ class Event < ActiveRecord::Base
     else
       return error  #implement this
     end
-
-  end
-
-  def tag(tags)
-    tags.each do |tag|
-      self.event_tags.create(tag_id: tag.to_i)
-    end
   end
 
   def self.get_totals
     totals = []
-    p "$$$$$$$$$$$$$$"
-    p totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
+    totals << self.find_physical << self.find_verbal << find_rumor << find_cyber << find_exclusion
   end
 
   def self.find_physical
@@ -55,6 +47,18 @@ class Event < ActiveRecord::Base
 
   def self.find_exclusion
     where("details LIKE ?", "%repellat%").count  #147
+  end
+
+  def tag(new_tag_ids)
+    new_tag_ids.each do |tag|
+      event_tags.create(tag_id: tag)
+    end
+  end
+
+  def untag(untag_ids)
+    untag_ids.each do |untag|
+      event_tags.find(untag).delete
+    end
   end
 
 end

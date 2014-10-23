@@ -7,5 +7,12 @@
     <%= render 'event_tags/this_event_tags', locals: @event %>
   </div>
 
-  <%= render 'tags/show', locals: @event %>
+  <div class="available_tags_container">
+    <%= render 'tags/show', locals: @event %>
+  </div>
+
+  <button>Confirm New Tags</button>
+  <a href="<%=admin_dashboard_url%>" class="right_align">
+  <button>Back to Admin Dashboard</button>
+  </a>
 </div>

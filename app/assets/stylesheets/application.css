@@ -116,4 +116,7 @@ footer p {
   float: right;
 }
 
-
+.unselected_tag {
+  background-color: #ff6666;
+  border-radius: 5px;
+}
