@@ -15,88 +15,17 @@
  *= require foundation_and_overrides
 
  */
-
-.admin-container {
-  background-color: #3A3A3B;
+body {
+  font-family: Garamond;
 }
-
-.admin-container h1 {
-  color: white;
-}
-
-.admin-placehold {
-  height: 400px;
-  border-style: solid;
-  border-color: Black;
-  border-radius: 5px;
-  background-color: #CFCFCF;
-  padding-left: 20px;
-  padding-top: 30px;
-}
-
-.admin-placehold li{
-  list-style: none;
-}
-
-.admin-placehold2 {
-  height: 400px;
-  border-style: solid;
-  border-color: Black;
-  border-radius: 5px;
-  background-color: #CFCFCF;
-}
-
-.admin-search {
-  height: 40%;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 100px;
-}
-
-footer p {
-  color: white;
-}
-
-.report {
-  height: 100%;
-  background-color: White;
-  overflow: scroll;
-  padding-left: 30px;
-}
-
-.report div {
-  width: 60%;
-  border-style: solid;
-  border-color: #8fb2b2;
-  background-color: #cfe1e1;
-  border-radius: 5px;
-  padding-left: 5%;
-  margin-left: 10%
-}
-
-.report div li {
-  list-style: none;
-
-}
-
-.selected_tag {
-  background-color: #9d66ef;
-  border-radius: 5px;
-}
-
-
-#button-close {
-  margin-top: 15px;
-}
-
 
  header {
-  background-color: rgba(57, 57, 57, .8);
-  position: fixed;
-  top: 0%;
+  background-color: white;
+  padding-top: 7%;
+  /*background-color: rgba(255, 255, 255, .8);*/
+  text-align: center;
+  top: 10%;
   width: 100%;
-  border-bottom: 1px solid black;
-  padding-left: 10%;
   z-index: 100;
  }
 
@@ -106,17 +35,67 @@ footer p {
   color: white;
  }
 
-.event_index {
-  background-color: rgba(200,200,200,0.5);
-  margin: 50px 50px;
-  padding: 15px;
+footer {
+  margin-top: 5%;
+  color: rgb(41, 163, 255);
+  text-align: center;
 }
 
-.right_align {
-  float: right;
+footer p {
+  color: black;
 }
 
-.unselected_tag {
-  background-color: #ff6666;
+li {
+  margin-right: 5%;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.placeholder {
+  width: 40%;
+  text-align: center;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 5px;
+  background-color: white;
 }
+
+.navbar {
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border-top: 2px solid rgb(41, 163, 255);
+
+  border-bottom: 2px solid rgb(41, 163, 255);
+
+  background-color: white;
+  opacity: .9;
+  color: gray;
+}
+
+.home-navbar-links {
+  margin: 0 auto;
+  line-height: 50px
+}
+ .home-navbar-links a:visited {
+  color: #393939;
+ }
+
+  .home-navbar-links a {
+  color: #393939;
+ }
+
+ .introduction {
+  margin-left: 5%;
+  text-align: left;
+  color: #393939;
+ }
+
+
+
