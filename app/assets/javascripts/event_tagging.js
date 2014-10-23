@@ -137,8 +137,9 @@ TagsController.prototype = {
 
 }
 
-var view = new TagsView($('.event_tags_container'),$('.available_tags_container'))
-var model = new TagsModel(view.eventID)
-var controller = new TagsController(model,view)
-
-controller.bindEvents()
+function activateEventTagging(){
+  var view = new TagsView($('.event_tags_container'),$('.available_tags_container'))
+  var model = new TagsModel(view.eventID)
+  var controller = new TagsController(model,view)
+  controller.bindEvents()
+}
