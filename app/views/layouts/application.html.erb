@@ -8,10 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-      <script type="text/javascript">
-       google.load("visualization", "1", {packages:["corechart"]});
-       </script>
+
       <%= stylesheet_link_tag    "application" %>
       <%= javascript_include_tag "vendor/modernizr" %>
       <%= csrf_meta_tags %>
@@ -42,32 +39,41 @@
 
       <%= yield %>
 
-      <%= javascript_include_tag "application" %>
-
-  </body>
-<!-- parent div -->
   <div class = "placeholder">
-    <p>About Shield.ED<p>
+    <div class = "introduction">
+    <p>Every day there are students across the country that become victims of bullying, harassment, and abuse while at school.<p>
+    <p>Shield.ED is a new line of defense in protecting every student's right to a learning environment that is respectful and safe.</p>
+    </div>
   </div>
 
   <footer>
     <ul>
-      <li><a href="#" data-reveal-id="myModal">Admin</a></li>
       <li><p>Copyright 2014</p></li>
+      <li><a href="#" data-reveal-id="myModal">Admin</a></li>
     </ul>
-
-      <div id="myModal" class="reveal-modal" data-reveal>
-          <h3>Admin Login</h3>
-          <%= form_tag({:controller => 'sessions', :action => 'create'}, { :class => "admin-login-form"}) do %>
-            <%= label_tag(:username, "Username: ") %>
-            <%= text_field_tag(:username) %>
-            <%= label_tag(:password_digest, "Password: ") %>
-            <%= password_field_tag(:password_digest) %>
-            <p class = "error"><%=session[:error]%></p>
-            <%= submit_tag("login", :class => "button [radius button]")  %>
-          <% end %>
-        <a class="close-reveal-modal">&#215;</a>
-      </div>
-
+       <div id="myModal" class="reveal-modal" data-reveal>
+            <h3>Admin Login</h3>
+            <%= form_tag({:controller => 'sessions', :action => 'create'}, { :class => "admin-login-form"}) do %>
+              <%= label_tag(:username, "Username: ") %>
+              <%= text_field_tag(:username) %>
+              <%= label_tag(:password_digest, "Password: ") %>
+              <%= password_field_tag(:password_digest) %>
+              <p class = "error"><%=session[:error]%></p>
+              <%= submit_tag("login", :class => "button [radius button]")  %>
+            <% end %>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
   </footer>
+
+    <%= javascript_include_tag "application" %>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("visualization", "1", {packages:["corechart"]});
+    </script>
+
+  </body>
+
 </html>
+
+
+
+

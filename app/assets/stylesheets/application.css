@@ -55,9 +55,9 @@ a {
 }
 
 .placeholder {
-  width: 100%;
+  width: 40%;
   text-align: center;
-  margin-top: 2%;
+  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
@@ -71,7 +71,9 @@ a {
   margin-right: auto;
   margin-top: 5%;
   border-top: 2px solid rgb(41, 163, 255);
+
   border-bottom: 2px solid rgb(41, 163, 255);
+
   background-color: white;
   opacity: .9;
   color: gray;
@@ -86,6 +88,12 @@ a {
  }
 
   .home-navbar-links a {
+  color: #393939;
+ }
+
+ .introduction {
+  margin-left: 5%;
+  text-align: left;
   color: #393939;
  }
 

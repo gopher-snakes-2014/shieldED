@@ -12,4 +12,11 @@
 .call911 {
   color: red;
   margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.submission_received {
+  color: black;
+  text-decoration: underline;
+  margin-bottom: 1%;
 }
