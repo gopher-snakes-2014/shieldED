@@ -12,15 +12,12 @@ class Event < ActiveRecord::Base
   def self.search(search_item)
     incidents = []
     if search_item
-      incidents << self.where("details LIKE ?", "%#{search_item}%")
-      incidents << self.where("submitter LIKE ?", "%#{search_item}%")
-      incidents << self.where("offender LIKE ?", "%#{search_item}%")
-      incidents << self.where("location LIKE ?", "%#{search_item}%")
+      incidents << self.where("details LIKE ?", "%#{search_item}%") << self.where("submitter LIKE ?", "%#{search_item}%") << self.where("offender LIKE ?", "%#{search_item}%") << self.where("location LIKE ?", "%#{search_item}%")
       incidents.flatten!
       incidents.uniq!
       return incidents
     else
-      return "not a valid search"
+      return search_item
     end
 
   end
@@ -69,6 +66,32 @@ class Event < ActiveRecord::Base
         end
       end
       totals
+  end
+
+  def self.get_offender_names
+     offenders = Event.select("offender, COUNT(*)").group("offender").order("COUNT(*) DESC").limit(10)
+  end
+
+  def self.offender_stats
+    words = ['ducimus','aliquam', 'suscipit', 'molestiae', 'repellat', 'voluptatem', 'occaecati', 'blanditiis', 'impedit']
+    radii = []
+
+    words.each do |word|
+      num = 4
+      radius = 0
+        while num >= 0
+          events = Event.by_calendar_month(Time.now - num.month)
+          events = events.where("details LIKE ?", "%#{word}%")
+          events.each do |event|
+            offender = event.offender
+            radius += Event.where("offender LIKE ?", "%#{offender}%").count
+          end
+          radius = radius/events.length
+          num -= 1
+          radii << radius
+        end
+      end
+    radii
   end
 
 end

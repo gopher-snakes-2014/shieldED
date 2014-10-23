@@ -116,4 +116,6 @@ footer p {
   float: right;
 }
 
-
+#pie-chart {
+  height: 15;
+}

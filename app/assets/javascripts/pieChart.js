@@ -27,7 +27,7 @@ google.setOnLoadCallback(drawChart);
                         is3D: true,
                         fontSize: 30}
 
-      var chart = new google.visualization.PieChart(document.getElementById('chart-div'));
+      var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
       chart.draw(data, options);
       }
     }
