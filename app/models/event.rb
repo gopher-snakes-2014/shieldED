@@ -79,10 +79,7 @@ class Event < ActiveRecord::Base
           events = Event.by_calendar_month(Time.now - num.month)
           events = events.where("details LIKE ?", "%#{word}%")
           events.each do |event|
-            p "*************"
             offender = event.offender
-            p offender
-            p "*************"
             if bullies.include?(offender)
               radius += 25
             else radius += 1

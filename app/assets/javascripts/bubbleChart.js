@@ -74,7 +74,7 @@
                         vAxis: { ticks: [{v:0,f:""},{v:100, f:'Physical'},{v:200, f:'Verbal'},{v:300, f:'Racist'},{v:400, f:'Cyberbully'},{v:500, f:'Exclusion'},{v:600, f:'Sexual'},{v:700, f:'Rumors'}, {v:800, f:'Transphobic'}, {v:900, f:'Homophobic'}, {v:990, f:''}]},
 
                         colorAxis: {colors: ['blue', '#ff0000']},
-                        sizeAxis: {minValue: 0, maxSize: 25},
+                        sizeAxis: { maxSize: 30},
 
                       }
 
