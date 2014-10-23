@@ -116,6 +116,12 @@ footer p {
   float: right;
 }
 
+
 #pie-chart {
   height: 15;
+}
+.unselected_tag {
+  background-color: #ff6666;
+  border-radius: 5px;
+
 }

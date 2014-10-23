@@ -3,7 +3,7 @@ feature "Events" do
     @user = User.create(username: "Billy")
     allow_any_instance_of(EventsController).to receive(:current_user).and_return(@user)
 
-    visit '/events/new'
+    visit new_event_path
     expect(page).to have_content('Event Summary')
 
     within(".new_event") do
