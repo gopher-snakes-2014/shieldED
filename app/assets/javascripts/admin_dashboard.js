@@ -60,11 +60,21 @@ bindLinker = function() {
       console.log("error");
     })
   })
-}
+},
+
+bindHideOne = function(0 {
+  $(".hide1").on('click', function(event) {
+    event.preventDefault();
+    $ajax({
+      url: '/'
+    })
+  })
+})
 
 $( document ).ready(function() {
    bindEvents();
   $(".report").hide();
    bindLinkToEvent();
    bindButtonClose();
+   bindHideOne();
 });

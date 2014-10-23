@@ -2,7 +2,6 @@
   google.setOnLoadCallback(drawChart);
 
   function drawChart() {
-      console.log("draw???")
       $.ajax({
         url: '/admins/dashboard/bubbles',
         }).done(function(serverData) {
@@ -62,9 +61,9 @@
           ['',   1250,  100,      serverData.totals_quarter[44], serverData.offender_stats[44]],
         ]);
 
-        var options = {'title':'Quarterly Frequency by Month',
+        var options = {'title':'Quarterly Frequency by Month and Proportionate Repeat Offender',
                         width:1000,
-                        height:550,
+                        height:600,
                         is3D: true,
                         fontSize: 15,
                         hAxis: {title: "Month"},

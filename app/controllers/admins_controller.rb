@@ -28,12 +28,8 @@ class AdminsController < ApplicationController
     render :json => {:totals_quarter => totals_quarter, :offender_stats => offender_stats}
   end
 
-  def bar_line
-    offenders = Event.get_offender_names
-  end
-
   def lines
-    totals = Event.past_fortnight
+    totals = Event.get_quarter
     render :json => {:totals => totals}
   end
 
