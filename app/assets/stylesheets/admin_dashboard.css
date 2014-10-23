@@ -3,23 +3,13 @@
   margin: 0 auto;
 }
 
- .admin-header {
+.admin-header {
   background-color: white;
-  padding-top: 5%;
-  height: 20vh;
+  padding-top: 2%;
   text-align: center;
   width: 100%;
   line-height: 50px;
-  margin-bottom: 5%;
- }
-
- .logo-holder {
-
- }
-
- .admin-title {
-
- }
+}
 
 .admin-footer {
   margin-top: 5%;
@@ -43,8 +33,7 @@ a {
 .admin-placeholder {
   width: 80%;
   text-align: center;
-  margin-top: 3%;
-  height: 50vh;
+  padding-top: 3%;
   margin-left: auto;
   margin-right: auto;
   border-left: 1px solid black;
@@ -57,12 +46,12 @@ a {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
   border-top: 2px solid #393939;
   border-bottom: 2px solid #393939;
   background-color: rgb(41, 163, 255);
   opacity: .9;
   color: black;
+  margin-bottom: 2%;
 }
 
 .admin-home-navbar-links {
@@ -105,31 +94,33 @@ a {
   width: 90%;
 }
 
+#pie-chart {
+  height: 15;
+}
 
+.event_details {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+}
 
+.right_align {
+  float: right;
+}
 
+.selected_tag {
+  background-color: #9d66ef;
+  border-radius: 5px;
+}
 
+.unselected_tag {
+  background-color: #ff6666;
+  border-radius: 5px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.show-event > a {
+  font-size: 1.1em;
+}
 
 ****************************************************************
 /*.admin-header {
@@ -218,28 +209,6 @@ a {
   margin: 30px 30px;
 }
 
-.right_align {
-  float: right;
-}
-
-.selected_tag {
-  background-color: #9d66ef;
-  border-radius: 5px;
-}
-
-.unselected_tag {
-  background-color: #ff6666;
-  border-radius: 5px;
-}
-
-.event_details {
-  -webkit-column-count: 3;
-     -moz-column-count: 3;
-          column-count: 3;
-}
-
 #button-close {
   margin-top: 15px;
 }*/
-
-
