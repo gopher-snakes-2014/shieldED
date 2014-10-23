@@ -84,14 +84,14 @@
         <div class="large-12 columns" id="slider">
 
             <ul class="orbit" data-orbit>
-              <li>
-                <div id="pie-chart"></div>
+              <li data-orbit-slide="headline-1" style="height: 550px;">
+                <div id="pie-chart" class="orb-chart"></div>
               </li>
-              <li class="active">
-                <div id="bubble-chart"></div>
+              <li class="active" data-orbit-slide="headline-2" style="height: 550px;">
+                <div id="bubble-chart" class="orb-chart"></div>
               </li>
-              <li>
-                <div id="line-chart"></div>
+              <li data-orbit-slide="headline-3" style="height: 550px;">
+                <div id="line-chart" class="orb-chart"></div>
               </li>
             </ul>
 
@@ -111,9 +111,9 @@
 
     </div>
 
-  <%= javascript_include_tag "application" %>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript">google.load("visualization", "1", {packages:["corechart"]});</script>
+  <%= javascript_include_tag "application" %>
 
   </body>
 </html>
