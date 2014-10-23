@@ -1,3 +1,7 @@
+.admin-charts {
+  display:  none;
+}
+
 .orb-chart {
   margin-left: -49%;
 }
@@ -125,94 +129,3 @@ a {
 .show-event > a {
   font-size: 1.1em;
 }
-
-****************************************************************
-/*.admin-header {
-  background-color: blue;
-  float: left;
-  width: 100%;
-}
-
-.title {
-  float: left;
-}
-
-.admin-header h1 {
-}
-
-#logo {
-  border: 1px solid red;
-  float: left;
-}
-
-.admin-container {
-  background-color: #3A3A3B;
-  background-color: gray;
-  border: 1px solid black;
-}
-
-.admin-container h1 {
-  color: black;
-}
-
-.admin-placehold {
-  height: 400px;
-  border-style: solid;
-  border-color: Black;
-  border-radius: 5px;
-  background-color: #CFCFCF;
-  padding-left: 20px;
-  padding-top: 30px;
-  border: 3px solid red;
-}
-
-.admin-placehold li{
-  list-style: none;
-}
-
-.admin-placehold2 {
-  height: 400px;
-  border-style: solid;
-  border-color: Black;
-  border-radius: 5px;
-  background-color: #CFCFCF;
-  border: 3px solid blue;
-}
-
-.admin-search {
-  height: 40%;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 100px;
-  border: 3px solid green;
-}
-
-.report {
-  height: 100%;
-  background-color: White;
-  overflow: scroll;
-  padding-left: 30px;
-}
-
-.report div {
-  width: 60%;
-  border-style: solid;
-  border-color: #8fb2b2;
-  background-color: #cfe1e1;
-  border-radius: 5px;
-  padding-left: 5%;
-  margin-left: 10%
-}
-
-.report div li {
-  list-style: none;
-}
-
-.event_index {
-  background-color: rgba(200,200,200,0.5);
-  margin: 30px 30px;
-}
-
-#button-close {
-  margin-top: 15px;
-}*/

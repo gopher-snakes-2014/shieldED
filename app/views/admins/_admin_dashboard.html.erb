@@ -31,9 +31,9 @@
 
       <div class="admin-navbar">
         <ul class = "admin-home-navbar-links">
-          <li><a href = "#">Search Events</a></li>
+          <li><a href = "#" id="search-els">Search Events</a></li>
           <li><a href = "#">Recent Events</a></li>
-          <li><a href = "#">Reports</a></li>
+          <li><a href = "#" id="charts">Reports</a></li>
           <li><a href = "#">Support</a></li>
           <li>
             <% if signed_in? %>
@@ -43,7 +43,7 @@
         </ul>
       </div>
 
-      <div class="row">
+      <div class="row" id="not-charts">
 
         <div class="large-4 columns">
           <div class = 'admin-placehold'>
@@ -64,12 +64,13 @@
               <%= form_tag search_path, :class => "search-form", :method => 'get', remote:true do %>
                 <p>
                   <%= text_area_tag :search, params[:search] %>
-                  <%= submit_tag "Search Reports",:id => "search", :name => nil %>
+                  <%= button_tag "Search Reports",:id => "search", :name => nil %>
                 </p>
               <% end %>
             </div>
             <div class="report">
-              <a href="#" class="button [tiny small large]" id="button-close">Close Search</a>
+              <button href="#" id="button-close">Close Search</button>
+              <!-- <a href="#" class="button [tiny small large]" id="button-close">Close Search</a> -->
               <ul class="search-results"></ul>
             </div>
             <div class="show-event-details">
@@ -79,7 +80,7 @@
 
       </div>
 
-      <div class="row" id="slim">
+      <div class="row admin-charts" id="slim">
 
         <div class="large-12 columns" id="slider">
 
@@ -98,7 +99,6 @@
         </div>
 
       </div>
-
       <hr/>
 
       <div class = "admin-footer">

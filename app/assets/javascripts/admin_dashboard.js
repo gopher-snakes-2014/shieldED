@@ -29,9 +29,9 @@ bindEvents = function() {
 bindLinkToEvent = function() {
   $(".show-event").on('ajax:success', function(e, data){
     $(".report").hide(400);
-    $(".show-event-details").empty().html(data)
     $(".admin-search").hide(400);
-    $(".show-event-details").show(400);
+    $(".show-event-details").hide(0).empty().html(data).show(400)
+    // $(".show-event-details").show(400);
     activateEventTagging()
   });
   $(".search-form").on('ajax:error', function(e, data) {console.log(data)});
@@ -52,9 +52,9 @@ bindLinker = function() {
     })
     .done(function(data) {
       $(".report").hide(400);
-      $(".show-event-details").empty().html(data)
       $(".admin-search").hide(400);
-      $(".show-event-details").show(500);
+      $(".show-event-details").empty().html(data)
+      $(".show-event-details").show(400);
     })
     .fail(function() {
       console.log("error");
@@ -62,9 +62,31 @@ bindLinker = function() {
   })
 },
 
+bindOpenCharts = function() {
+  $('#charts').on('click', function(event) {
+    event.preventDefault();
+    $('.admin-charts').show(400)
+    $('#not-charts').hide(400)
+    })
+  },
+
+bindSearchTab = function() {
+  $('#search-els').on('click', function(event) {
+    event.preventDefault();
+    $('.admin-charts').hide(400);
+    $('#not-charts').show(400);
+    $('.show-event-details').hide(400);
+    $('.admin-search').show(400);
+  })
+},
+
+
+
 $( document ).ready(function() {
    bindEvents();
   $(".report").hide();
    bindLinkToEvent();
    bindButtonClose();
+   bindOpenCharts();
+   bindSearchTab();
 });

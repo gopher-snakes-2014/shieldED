@@ -21,14 +21,18 @@ google.setOnLoadCallback(drawChart);
         ]);
 
         var options = {'title':'Reports of Bullying based on Keyword',
-                        width:900,
-                        height:400,
+                        width:1000,
+                        height:650,
                         colors: ['#00CCCC','#669933', '#66FF66', '#339999', '#99CCCC' ],
                         is3D: true,
                         fontSize: 30,
-                        slices: {4: {offset: 0.2},
-                                 3: {offset: 0.2},
-                              },};
+                        slices: {4: {offset: 0.1},
+                                 3: {offset: 0.1},
+                                 1: {offset: 0.1},
+                                 // 2: {offset: 0.1}
+                              },
+                        pieSliceText: 'none'
+                      };
 
       var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
       chart.draw(data, options);
