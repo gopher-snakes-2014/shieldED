@@ -22,8 +22,15 @@ class AdminsController < ApplicationController
   end
 
   def bubbles
-    totals = Event.get_totals
-    render :json => {:totals => totals}
+    offender_stats = Event.offender_stats
+    totals_quarter = Event.get_month_totals
+    render :json => {:totals_quarter => totals_quarter, :offender_stats => offender_stats}
   end
+
+  def bar_line
+    offenders = Event.get_offender_names
+  end
+
+
 
 end
