@@ -149,3 +149,27 @@ a {
 .show-event > a {
   font-size: 1.1em;
 }
+
+.tag-container li{
+  font-size: 1.5em;
+  color: black;
+}
+
+.event-container {
+  border: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.add-tag-container {
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.available-tags-title {
+  color: rgb(247, 121, 14);
+}
+
+.event-number {
+  color: rgb(247, 121, 14);
+}

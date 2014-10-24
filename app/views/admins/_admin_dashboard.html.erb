@@ -16,7 +16,7 @@
   </head>
 
   <body>
-<div class = "admin-placeholder">
+    <div class = "admin-placeholder">
 
       <div class = "admin-header">
 
@@ -27,16 +27,16 @@
         </div>
 
         <div class = "admin-title">
-          <h2>Admin Report Detail</h2>
+          <h2 class = "admin-title">Admin Report Detail</h2>
         </div>
 
       </div>
 
       <div class="admin-navbar">
         <ul class = "admin-home-navbar-links">
-          <li><a href = "#" id="search-els">Search Events</a></li>
-          <li><a href = "#">Recent Events</a></li>
-          <li><a href = "#" id="charts">Reports</a></li>
+          <li><a href = "#" id="search-els">Search Incidents</a></li>
+          <li><a href = "#">Recent Incidents</a></li>
+          <li><a href = "#" id="charts">Charts</a></li>
           <li><a href = "#">Support</a></li>
           <li>
             <% if signed_in? %>
@@ -50,7 +50,7 @@
 
         <div class="large-4 columns">
           <div class = 'admin-placehold'>
-            <h4>Recent Reports<h4>
+            <h4>Recent Incidents<h4>
             <ul >
               <%@latest.each do |event|%>
                 <li class= "show-event">

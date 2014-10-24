@@ -1,5 +1,6 @@
-<h4>Available Tags</h4>
+<h3 class = "available-tags-title">Available Tags</h3>
 
+<div class = "tag-container">
 <ul class="all_tags inline-list">
   <% @tags.each do |tag| %>
   <% unless @event.tags.include? tag %>
@@ -9,3 +10,4 @@
     <% end %>
   <% end %>
 </ul>
+</div>
