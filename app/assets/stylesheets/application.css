@@ -17,11 +17,19 @@
  */
 body {
   font-family: Arial;
-  background-color: rgb(41, 163, 255);
+
 }
 
+.body-container {
+    background-color: rgb(41, 163, 255);
+}
+
+#myModal {
+  width: 30%;
+  text-align: center;
+}
 .container {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   background-color: white;
 }
@@ -76,8 +84,8 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 3%;
-  border-top: 2px solid purple;
-  border-bottom: 2px solid purple;
+  border-top: 4px solid purple;
+  border-bottom: 4px solid purple;
   background-color: white;
   color: gray;
 }
@@ -86,12 +94,18 @@ a {
   margin: 0 auto;
   line-height: 75px
 }
+
+.home-navbar-links a {
+  color: #393939;
+ }
+
  .home-navbar-links a:visited {
   color: #393939;
  }
 
-  .home-navbar-links a {
-  color: #393939;
+ .home-navbar-links a:hover {
+  color: purple;
+  text-shadow: 1px 1px black;
  }
 
  .introduction {

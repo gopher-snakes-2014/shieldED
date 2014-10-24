@@ -3,7 +3,7 @@
   <ul >
     <%@latest.each do |event|%>
       <li class= "show-event">
-        <%= link_to  "#{event.id}'. '#{event.date} : #{event.details[0..10]}",   show_event_partial_path(event.id), :remote => true%>
+        <%= link_to "#{event.date} : #{event.details[0..10]}",   show_event_partial_path(event.id), :remote => true%>
       </li>
       <br>
     <%end%>
