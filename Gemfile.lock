@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/radar/by_star
+  revision: d972c500b235196e6c512ce24440bd5857839bf5
+  specs:
+    by_star (2.2.1)
+      activesupport
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 3ec2599d13c1c4d6ab7c5bd291b8ff31e625915e
   specs:
@@ -213,6 +220,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   bcrypt (~> 3.1.7)
+  by_star!
   capybara
   capybara-screenshot
   coffee-rails (~> 4.0.0)

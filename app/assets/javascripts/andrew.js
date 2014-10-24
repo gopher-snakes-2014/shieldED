@@ -1,5 +1,4 @@
 $(document).ready(function() {
-console.log("whatever")
   $(".Login_Link").on("click", function(e) {
     var that = $(this)
     e.preventDefault();
@@ -37,11 +36,4 @@ console.log("whatever")
     console.log("FAIL")
   })
 
-  // $(document).on("ajax:success", '.student-parent-login-form', function(e, data) {
-  //   console.log("SUCCESS")
-  //   console.log(data)
-  //   $(".placeholder").html(data)
-  // }).on("ajax:error", function(e, xhr, status, error) {
-  //   console.log("FAIL")
-  // })
 });
