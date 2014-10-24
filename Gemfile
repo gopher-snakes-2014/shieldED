@@ -33,6 +33,7 @@ gem 'pry'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'faker'
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -61,5 +62,4 @@ group :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'faker'
 end

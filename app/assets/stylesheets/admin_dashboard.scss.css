@@ -6,9 +6,19 @@
   margin-left: -49%;
 }
 
-.container {
-  width: 90%;
+.orbit-next {
+  background-color: black;
+}
+
+.admin-container {
+  width: 100%;
   margin: 0 auto;
+  background-color: #393939;
+}
+
+.admin-login-button {
+  width: 30%;
+  background-color: rgb(247, 121, 14);
 }
 
 .admin-header {
@@ -39,7 +49,7 @@ a {
 }
 
 .admin-placeholder {
-  width: 80%;
+  width: 85%;
   text-align: center;
   padding-top: 3%;
   margin-left: auto;
@@ -56,7 +66,7 @@ a {
   margin-right: auto;
   border-top: 2px solid #393939;
   border-bottom: 2px solid #393939;
-  background-color: rgb(41, 163, 255);
+  background-color: rgb(247, 121, 14);
   opacity: .9;
   color: black;
   margin-bottom: 2%;
@@ -67,12 +77,16 @@ a {
   line-height: 50px
 }
 
+.admin-home-navbar-links a {
+  color: white;
+}
+
 .admin-home-navbar-links a:visited {
   color: white;
 }
 
-.admin-home-navbar-links a {
-  color: white;
+.admin-home-navbar-links a:hover {
+  color: #393939;
 }
 
 .admin-introduction {
@@ -81,12 +95,18 @@ a {
 }
 
 .admin-footer {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .admin-placehold {
   text-align: left;
+  margin-left: 10%;
 }
+
+.admin-placehold ul {
+  margin-left: -1%;
+}
+
 .admin-placehold2 {
   text-align: center;
 }
@@ -128,6 +148,39 @@ a {
 
 .show-event > a {
   font-size: 1.1em;
+}
+
+.tag-container li{
+  font-size: 1.2em;
+  color: black;
+}
+
+.event-container {
+  padding-bottom: 10px;
+}
+
+.add-tag-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.available-tags-title {
+  color: rgb(247, 121, 14);
+}
+
+.event-number {
+  color: rgb(247, 121, 14);
+}
+
+.available-tags {
+  text-align: center
+}
+.tag-container {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+          text-align: center;
+          padding-left: 40px;
 }
 
 .search-results {

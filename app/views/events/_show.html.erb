@@ -1,12 +1,16 @@
 <div class="event_index">
-  <h4>No.<%=@event.id%>, reported on:<%= @event.date %></h4>
-
+  <div class = "event-container">
+  <h3 class = "event-number">Event #<%=@event.id%></h3>
+  <h5>Reported on: <%= @event.date %></h5>
+  <br>
   <div class="event_details">
-    <h5>Details</h5><p><%= @event.details %></p>
-    <h5>Location</h5><p><%= @event.location %></p>
-    <h5>Named Offender(s)</h5><p><%= @event.offender %></p>
+    <h4>Details</h4><p><%= @event.details %></p>
+    <h4>Location</h4><p><%= @event.location %></p>
+    <h4>Named Offender(s)</h4><p><%= @event.offender %></p>
   </div>
-
+</div>
+<br>
+<div class = "add-tag-container">
   <div class="event_tags_container" id="<%= @event.id %>" >
     <%= render 'event_tags/this_event_tags', locals: @event %>
   </div>
@@ -16,4 +20,5 @@
   </div>
 
   <button class="right_align">Tag/Untag</button>
+</div>
 </div>

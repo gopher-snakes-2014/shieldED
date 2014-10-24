@@ -16,12 +16,19 @@
 
  */
 body {
-  font-family: Arial;
-  background-color: rgb(41, 163, 255);
+  font-family: Helvetica;
 }
 
+.body-container {
+    background-color: rgb(41, 163, 255);
+}
+
+#myModal {
+  width: 30%;
+  text-align: center;
+}
 .container {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   background-color: white;
 }
@@ -42,7 +49,7 @@ body {
  }
 
 footer {
-  margin-top: 25%;
+  margin-top: 10%;
   color: rgb(41, 163, 255);
   text-align: center;
 }
@@ -58,11 +65,11 @@ li {
 
 a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 .placeholder {
-  width: 40%;
+  width: 100%;
   text-align: center;
   margin-top: 5%;
   margin-left: auto;
@@ -76,8 +83,8 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 3%;
-  border-top: 2px solid purple;
-  border-bottom: 2px solid purple;
+  border-top: 4px solid purple;
+  border-bottom: 4px solid purple;
   background-color: white;
   color: gray;
 }
@@ -86,19 +93,36 @@ a {
   margin: 0 auto;
   line-height: 75px
 }
+
+.home-navbar-links a {
+  color: #393939;
+ }
+
  .home-navbar-links a:visited {
   color: #393939;
  }
 
-  .home-navbar-links a {
-  color: #393939;
+ .home-navbar-links a:hover {
+  color: rgb(41, 163, 255);
+  text-shadow: 1px 1px black;
  }
 
  .introduction {
-  margin-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 52%;
   text-align: left;
-  color: #393939;
+  color: black;
  }
+
+ .introduction h4 {
+  color: purple;
+  font-weight: bold;
+ }
+
+.admin-title {
+  font-family: Cochin;
+}
 
  button {
    background-color: rgb(41, 163, 255);
@@ -107,3 +131,4 @@ a {
 button:hover {
   background-color: rgb(247, 121,14)
 }
+

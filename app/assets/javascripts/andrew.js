@@ -23,7 +23,7 @@ $(document).ready(function() {
       data: that.serialize()
     }).done(function(server_data) {
       console.log("SUCCESS")
-      $(".dashboard_placeholder").html(server_data)
+      $(".placeholder").html(server_data)
     }).fail(function() {
       console.log("FAIL")
     })
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   $(document).on("ajax:success", '.new_event', function(e, data) {
     console.log("SUCCESS")
-    $(".dashboard_placeholder").html(data)
+    $(".placeholder").html(data)
   }).on("ajax:error", function(e, xhr, status, error) {
     console.log("FAIL")
   })

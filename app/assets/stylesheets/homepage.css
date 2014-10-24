@@ -13,13 +13,17 @@
 }
 
 .student-parent-login form {
-  width: 100%;
+  width: 50%;
   margin: 0 auto;
   font-size: .1em;
   color: white;
 }
 
-.button {
+.dashboard-title {
+  color: rgb(41, 163, 255);;
+}
+
+.login-button {
   background-color: rgb(41, 163, 255);
   border: 1px solid black;
   color: black;
@@ -31,7 +35,13 @@
   -moz-background-size: cover;
   -o-background-size: cover;
  }*/
+#username {
+  border: 1px solid black;
+}
 
+#password_digest {
+  border: 1px solid black;
+}
 
 
  .error {
