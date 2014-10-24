@@ -19,6 +19,10 @@
   color: white;
 }
 
+.dashboard-title {
+  color: rgb(41, 163, 255);;
+}
+
 .login-button {
   background-color: rgb(41, 163, 255);
   border: 1px solid black;
@@ -31,7 +35,13 @@
   -moz-background-size: cover;
   -o-background-size: cover;
  }*/
+#username {
+  border: 1px solid black;
+}
 
+#password_digest {
+  border: 1px solid black;
+}
 
 
  .error {

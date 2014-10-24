@@ -30,3 +30,10 @@ class EventsController < ApplicationController
   end
 
 end
+
+
+SINATRA
+
+get '/' do
+  @user = User.find_bydfkjd
+end

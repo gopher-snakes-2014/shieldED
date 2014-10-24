@@ -10,9 +10,38 @@
 
 .new_event {
   margin: 0 auto;
-  width: 55%;
+  width: 35%;
+  text-align: left;
 }
 
+label {
+  font-weight: bold;
+  color: purple;
+}
+
+#event_location{
+  border: 1px solid black;
+}
+
+#event_offender{
+  border: 1px solid black;
+}
+
+#event_date{
+  border: 1px solid black;
+}
+
+#event_submitter{
+  border: 1px solid black;
+}
+
+#event_event_photo{
+  border: 1px solid black;
+}
+
+textarea {
+  border: 1px solid black;
+}
 
 
 

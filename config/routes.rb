@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   get     '/admins/dashboard'               => 'admins#admin_dashboard',        :as => 'admin_dashboard'
   get     '/admins/dashboard/search'        => 'admins#search',                 :as => 'search'
-
   get     '/admins/dashboard/pie'           => 'admins#pie'
   get     '/admins/dashboard/bubbles'       => 'admins#bubbles'
   get     '/admins/dashboard/lines'       => 'admins#lines'
