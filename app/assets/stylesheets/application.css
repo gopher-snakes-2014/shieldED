@@ -16,13 +16,19 @@
 
  */
 body {
-  font-family: Garamond;
+  font-family: Arial;
+  background-color: rgb(41, 163, 255);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
 }
 
  header {
   background-color: white;
   padding-top: 7%;
-  /*background-color: rgba(255, 255, 255, .8);*/
   text-align: center;
   top: 10%;
   width: 100%;
@@ -36,7 +42,7 @@ body {
  }
 
 footer {
-  margin-top: 5%;
+  margin-top: 25%;
   color: rgb(41, 163, 255);
   text-align: center;
 }
@@ -52,15 +58,15 @@ li {
 
 a {
   text-decoration: none;
+  font-size: 1.5em;
 }
 
 .placeholder {
   width: 40%;
   text-align: center;
-  margin-top: 3%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 5px;
   background-color: white;
 }
 
@@ -69,19 +75,16 @@ a {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
-  border-top: 2px solid rgb(41, 163, 255);
-
-  border-bottom: 2px solid rgb(41, 163, 255);
-
+  margin-top: 3%;
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
   background-color: white;
-  opacity: .9;
   color: gray;
 }
 
 .home-navbar-links {
   margin: 0 auto;
-  line-height: 50px
+  line-height: 75px
 }
  .home-navbar-links a:visited {
   color: #393939;
@@ -97,5 +100,10 @@ a {
   color: #393939;
  }
 
+ button {
+   background-color: rgb(41, 163, 255);
+ }
 
-
+button:hover {
+  background-color: rgb(247, 121,14)
+}
