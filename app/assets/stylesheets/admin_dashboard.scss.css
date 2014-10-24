@@ -151,18 +151,16 @@ a {
 }
 
 .tag-container li{
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: black;
 }
 
 .event-container {
-  border: 1px solid black;
   padding-bottom: 10px;
 }
 
 .add-tag-container {
   text-align: center;
-  border: 1px solid black;
   margin-bottom: 10px;
 }
 
@@ -172,4 +170,15 @@ a {
 
 .event-number {
   color: rgb(247, 121, 14);
+}
+
+.available-tags {
+  text-align: center
+}
+.tag-container {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+          text-align: center;
+          padding-left: 40px;
 }
