@@ -53,6 +53,7 @@
       <li><a href="#" data-reveal-id="myModal">Admin</a></li>
     </ul>
        <div id="myModal" class="reveal-modal" data-reveal>
+            <%=image_tag("OrangeShieldLogo.png", width: "100", :class => "logo")%>
             <h3>Admin Login</h3>
             <%= form_tag({:controller => 'sessions', :action => 'create'}, { :class => "admin-login-form"}) do %>
               <%= label_tag(:username, "Username: ") %>
@@ -60,7 +61,7 @@
               <%= label_tag(:password_digest, "Password: ") %>
               <%= password_field_tag(:password_digest) %>
               <p class = "error"><%=session[:error]%></p>
-              <%= submit_tag("login", :class => "button [radius button]")  %>
+              <%= submit_tag("login", :class => "admin-login-button")  %>
             <% end %>
           <a class="close-reveal-modal">&#215;</a>
         </div>

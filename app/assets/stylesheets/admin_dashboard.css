@@ -60,7 +60,8 @@ a {
   margin-top: 5%;
   border-top: 2px solid #393939;
   border-bottom: 2px solid #393939;
-  background-color: rgb(41, 163, 255);
+  background-color: rgb(247, 121, 14);
+  /*background-color: rgb(251, 176, 59);*/
   opacity: .9;
   color: black;
 }
@@ -103,6 +104,17 @@ a {
 
 .orbit {
   width: 90%;
+}
+
+.admin-login-button {
+  background-color: rgb(247, 121, 14);
+  width: 15%;
+  height: 5%;
+}
+
+#myModal {
+  width: 40%;
+  text-align: center;
 }
 
 

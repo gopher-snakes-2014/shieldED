@@ -17,7 +17,7 @@
       <div class = "admin-header">
 
         <div class = "logo-holder">
-            <%=image_tag("shield_L-01.png", width: "150", :class => "logo")%>
+            <%=image_tag("OrangeShieldLogo.png", width: "150", :class => "logo")%>
         </div>
 
         <div class = "admin-title">
@@ -54,20 +54,7 @@
   <div class = "admin-footer">
     <ul>
       <li><p>Copyright 2014</p></li>
-      <li><a href="#" data-reveal-id="myModal">Admin</a></li>
     </ul>
-       <div id="myModal" class="reveal-modal" data-reveal>
-            <h3>Admin Login</h3>
-            <%= form_tag({:controller => 'sessions', :action => 'create'}, { :class => "admin-login-form"}) do %>
-              <%= label_tag(:username, "Username: ") %>
-              <%= text_field_tag(:username) %>
-              <%= label_tag(:password_digest, "Password: ") %>
-              <%= password_field_tag(:password_digest) %>
-              <p class = "error"><%=session[:error]%></p>
-              <%= submit_tag("login", :class => "button [radius button]")  %>
-            <% end %>
-          <a class="close-reveal-modal">&#215;</a>
-        </div>
   </div>
 
     <%= javascript_include_tag "application" %>
