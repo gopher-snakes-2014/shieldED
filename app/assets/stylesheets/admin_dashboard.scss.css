@@ -85,7 +85,7 @@ a {
 }
 
 .admin-placehold {
-  text-align: center;
+  text-align: left;
 }
 .admin-placehold2 {
   text-align: center;
@@ -128,4 +128,17 @@ a {
 
 .show-event > a {
   font-size: 1.1em;
+}
+
+.search-results {
+  text-align: left;
+}
+
+.search-results li {
+  width: 585px;
+  border-style: solid;
+  border-color: rgb(41, 163, 255);
+  margin-bottom: 5px;
+  border-radius: 4px;
+  font-size: .6em;
 }

@@ -6,8 +6,6 @@ google.setOnLoadCallback(drawChart);
         url: '/admins/dashboard/lines',
         }).done(function(serverData) {
           fillLineChart(serverData);
-          console.log("success")
-          console.log(serverData)
       });
 
       fillLineChart = function(serverData) {
