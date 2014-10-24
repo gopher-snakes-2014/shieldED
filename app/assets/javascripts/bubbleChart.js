@@ -5,6 +5,7 @@
       $.ajax({
         url: '/admins/dashboard/bubbles',
         }).done(function(serverData) {
+          console.log(serverData)
           fillBubbleChart(serverData);
         }).fail(function(){
           console.log("fail");
@@ -13,7 +14,7 @@
 
       fillBubbleChart = function(serverData) {
         var data = new google.visualization.arrayToDataTable([
-          ['ID', 'Month', 'Type', 'Frequency', 'Offender Recurrence'],
+          ['ID', 'Week', 'Type', 'Frequency', 'Offender Recurrence'],
           ['',   250,  900,      serverData.totals_quarter[0],   serverData.offender_stats[0]],
           ['',   500,  900,      serverData.totals_quarter[1],   serverData.offender_stats[1]],
           ['',   750,  900,      serverData.totals_quarter[2],   serverData.offender_stats[2]],
@@ -61,19 +62,21 @@
           ['',   1250,  100,      serverData.totals_quarter[44], serverData.offender_stats[44]],
         ]);
 
-        var options = {'title':'Quarterly Frequency by Month and Proportionate Repeat Offender',
+        var options = {'title':"Current Month Trends",
                         width:1000,
                         height:600,
                         is3D: true,
                         fontSize: 15,
                         hAxis: {title: "Month"},
                         yAxis: {title: "Type"},
-                        hAxis: { ticks: [ {v:150, f:''},{v:250, f:"June"}, {v:500,f:"July"}, {v:750, f:"Aug"}, {v:1000, f:"Sept"}, {v:1250, f:"Oct"}, {v:1500,f:""} ] },
+                        hAxis: { ticks: [ {v:0, f:''}, {v:250, f:'week1'}, {v:500, f:'week2'}, {v:750, f:'week3'}, {v:1000, f:'week4'}, {v:1250, f:'week5'}, {v:1500, f:''}]
+
+                          // [ {v:150, f:''},{v:250, f:"June"}, {v:500,f:"July"}, {v:750, f:"Aug"}, {v:1000, f:"Sept"}, {v:1250, f:"Oct"}, {v:1500,f:""} ]
+                        },
                         vAxis: { ticks: [{v:0,f:""},{v:100, f:'Physical'},{v:200, f:'Verbal'},{v:300, f:'Racist'},{v:400, f:'Cyberbully'},{v:500, f:'Exclusion'},{v:600, f:'Sexual'},{v:700, f:'Rumors'}, {v:800, f:'Transphobic'}, {v:900, f:'Homophobic'}, {v:990, f:''}]},
 
                         colorAxis: {colors: ['blue', '#ff0000']},
                         sizeAxis: { maxSize: 30},
-
                       }
 
       var chart = new google.visualization.BubbleChart(document.getElementById('bubble-chart'));
