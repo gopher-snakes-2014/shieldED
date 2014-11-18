@@ -34,24 +34,24 @@ body {
   background-color: white;
 }
 
- header {
+header {
   background-color: white;
   padding-top: 7%;
   text-align: center;
   top: 10%;
   width: 100%;
   z-index: 100;
- }
+}
 
- header img {
+header img {
   width: 70%;
- }
+}
 
- header h1 {
+header h1 {
   font-family: robofan free;
   font-size: 3.0em;
   color: white;
- }
+}
 
 footer {
   margin-top: 20%;
@@ -104,42 +104,44 @@ a {
   color: #393939;
 }
 
- .home-navbar-links a:visited {
+.home-navbar-links a:visited {
   color: #393939;
- }
+}
 
- .home-navbar-links a:hover {
+.home-navbar-links a:hover {
   color: rgb(41, 163, 255);
   text-shadow: 1px 1px black;
- }
+}
 
- .introduction {
+.introduction {
   margin-left: auto;
   margin-right: auto;
   width: 85%;
   text-align: justify;
   color: black;
- }
+}
 
- .introduction h4 {
+.introduction h4 {
   color: purple;
   font-weight: bold;
   text-align: center;
   text-decoration: underline;
- }
+}
 
 .admin-title {
   font-family: Cochin;
 }
 
- button {
-   background-color: rgb(41, 163, 255);
- }
+button {
+  background-color: rgb(41, 163, 255);
+}
 
 button:hover {
   background-color: rgb(247, 121,14)
 }
 
+
+/* TABLET & LARGER */
 @media (min-width: 767px) {
 
   header img {
@@ -158,15 +160,17 @@ button:hover {
 
 }
 
+/* PHONE <-> TABLET */
+
 @media (min-width: 480px) {
 
   .introduction {
     width: 70%;
   }
 
-.home-navbar-links {
+  .home-navbar-links {
     margin: 0 auto;
     line-height: 75px
-}
+  }
 
 }
