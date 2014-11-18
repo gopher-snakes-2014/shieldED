@@ -13,7 +13,7 @@
 }
 
 .student-parent-login form {
-  width: 50%;
+  width: 90%;
   margin: 0 auto;
   font-size: .1em;
   color: white;
@@ -47,3 +47,11 @@
  .error {
   color: red;
  }
+
+ @media (min-width: 480px) {
+
+  .student-parent-login {
+    width: 90%;
+  }
+
+}

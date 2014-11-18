@@ -11,7 +11,6 @@
           console.log("fail");
       }),
 
-
       fillBubbleChart = function(serverData) {
         var data = new google.visualization.arrayToDataTable([
           ['ID', 'Week', 'Type', 'Frequency', 'Offender Recurrence'],

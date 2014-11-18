@@ -27,6 +27,7 @@ body {
   width: 30%;
   text-align: center;
 }
+
 .container {
   width: 85%;
   margin: 0 auto;
@@ -42,6 +43,10 @@ body {
   z-index: 100;
  }
 
+ header img {
+  width: 70%;
+ }
+
  header h1 {
   font-family: robofan free;
   font-size: 3.0em;
@@ -49,7 +54,7 @@ body {
  }
 
 footer {
-  margin-top: 10%;
+  margin-top: 20%;
   color: rgb(41, 163, 255);
   text-align: center;
 }
@@ -60,7 +65,8 @@ footer p {
 
 li {
   margin-right: 5%;
-  display: inline-block;
+  margin-top: -20px;
+  display: block;
 }
 
 a {
@@ -78,7 +84,7 @@ a {
 }
 
 .navbar {
-  width: 80%;
+  width: 75%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -87,16 +93,16 @@ a {
   border-bottom: 4px solid purple;
   background-color: white;
   color: gray;
+  padding-top: 20px;
 }
 
 .home-navbar-links {
-  margin: 0 auto;
   line-height: 75px
 }
 
 .home-navbar-links a {
   color: #393939;
- }
+}
 
  .home-navbar-links a:visited {
   color: #393939;
@@ -110,14 +116,16 @@ a {
  .introduction {
   margin-left: auto;
   margin-right: auto;
-  width: 52%;
-  text-align: left;
+  width: 85%;
+  text-align: justify;
   color: black;
  }
 
  .introduction h4 {
   color: purple;
   font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
  }
 
 .admin-title {
@@ -132,3 +140,33 @@ button:hover {
   background-color: rgb(247, 121,14)
 }
 
+@media (min-width: 767px) {
+
+  header img {
+    width: 45%;
+  }
+
+  li {
+    margin-right: 4%;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    width: 95%;
+  }
+
+}
+
+@media (min-width: 480px) {
+
+  .introduction {
+    width: 70%;
+  }
+
+.home-navbar-links {
+    margin: 0 auto;
+    line-height: 75px
+}
+
+}
