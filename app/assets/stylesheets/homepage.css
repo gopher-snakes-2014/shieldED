@@ -28,13 +28,7 @@
   border: 1px solid black;
   color: black;
 }
-/*
- body {
-  background: url(http://oi58.tinypic.com/21l79zd.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
- }*/
+
 #username {
   border: 1px solid black;
 }
@@ -43,12 +37,13 @@
   border: 1px solid black;
 }
 
-
- .error {
+.error {
   color: red;
- }
+}
 
- @media (min-width: 480px) {
+/* PHONE & LARGER */
+
+@media (min-width: 480px) {
 
   .student-parent-login {
     width: 90%;
