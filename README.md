@@ -36,3 +36,6 @@ Final Project Repo for ShieldED
 * Admin can view all incidents
 * Admin can view a specific incident
 * Admin can view a count of all incidents
+
+##Further Instructions
+* Open the README.rdoc file
