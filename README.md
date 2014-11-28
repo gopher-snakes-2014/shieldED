@@ -45,7 +45,7 @@ Final Project Repo for ShieldED
  - Date of incident
  - Location of incident
  - Persons involved
- - Related photos
+ - Related photos (Using PaperClip & Amazon S3)
 * An incident notification is immediately mailed to school administrator
 * School admin sees a list of all recent incidents
 * School admin can search all incidents for keywords
