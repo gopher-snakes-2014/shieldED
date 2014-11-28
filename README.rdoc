@@ -26,6 +26,14 @@ Instructions for running the ShieldED app:
     
 * Navigate to the appropriate local host address from your web browswer to view the app
 
+* To login and access features:
+
+  - Student/Parent: 
+    - 5 Digit Key: 123ST
+  - Admin
+    - Username: Admin
+    - Password: 1234
+    
 * To run the test suite
 
   -type "bundle exec rspec" into the command line
