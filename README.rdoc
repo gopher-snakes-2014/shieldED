@@ -10,24 +10,24 @@ Instructions for running the ShieldED app:
                        
 * To acquire the necessary gems for the app: 
 
-  *type "bundle install" 
+  -type "bundle install" 
   
 * To create/initalize the necessary database/database fields:
                         
-  *type "rake db:create" to create the database file
+  -type "rake db:create" to create the database file
   
-  *type "rake db:migrate" to migrate the necessary database fields
+  -type "rake db:migrate" to migrate the necessary database fields
   
-  *type "rake db:seed" to populate the database with test data
+  -type "rake db:seed" to populate the database with test data
 
-* To run the app from your local server: 
+* To run the app from your local server:
     
-    *type in "rails s" 
+  -type in "rails s" 
     
 * Navigate to the appropriate local host address from your web browswer to view the app
 
 * To run the test suite
 
-  *type "bundle exec rspec" into the command line
+  -type "bundle exec rspec" into the command line
 
 
