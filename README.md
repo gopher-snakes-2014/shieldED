@@ -36,3 +36,21 @@ Final Project Repo for ShieldED
 * Admin can view all incidents
 * Admin can view a specific incident
 * Admin can view a count of all incidents
+
+##Final App Features
+* User authentication for Students/Parents/Admin
+ - Users are provided with a random, 5-digit key by their school for login
+* A student/parent submits a new "event (incident)" through a form:
+ - Incident Details
+ - Date of incident
+ - Location of incident
+ - Persons involved
+ - Related photos (Using PaperClip & Amazon S3)
+* An incident notification is immediately mailed to school administrator
+* School admin sees a list of all recent incidents
+* School admin can search all incidents for keywords
+* School admin can tag/untag incidents with appropriate keywords which describe the violence type
+* School admin can view charts which display violence trends/stats (Using the GoogleCharts API)
+
+##Instructions For Running The App
+* Open the README.rdoc file
