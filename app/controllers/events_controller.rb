@@ -2,8 +2,12 @@ class EventsController < ApplicationController
   include ApplicationHelper
 
   def new
-    @event = Event.new
-    render partial: 'new', locals: { event: @event }
+    if signed_in?
+      @event = Event.new
+      render partial: 'new', locals: { event: @event }
+    else
+      redirect_to root_path
+    end
   end
 
 	def create
