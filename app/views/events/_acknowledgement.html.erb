@@ -1,21 +1,99 @@
-<div class = "acknowledgement-container">
-  <h4 class = "submission_received">Submission Received</h4>
+<!DOCTYPE html>
+<html lang="en">
+<div class = "body-container">
+      <div class = "container">
+  <head>
 
-  <h4 class = "call911">In the event this is an emergency, please contact 911 immediately</h4>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.css"/>
 
-  <p>We greatly appreciate your willingness to provide us with information that helps our school to maintain a safe learning environment.  Depending on the specificity of your submission, we may use the information to take direct action in preventing violent or abusive behavior from taking place.  Specifics of your submission will also be used in identifying behavorial trends within our school district. </p>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <p>At no time will the specifics of your submission be made available to the public, or be viewed by anyone other than designated school district administrators and/or local law enforcement (if necessary)</p>
+      <title><%= content_for?(:title) ? yield(:title) : "ShieldED" %></title>
 
-  <div class = "resources-list">
-    <h4>Local Resources</h4>
-    <p>School Principal: 555-555-5555</p>
-    <p>School Counselor: 555-555-5555</p>
-    <p>Police Station: 555-555-5555</p>
-    <p>Suicide HelpLine: 555-555-5555</p>
-  </div>
+      <%= stylesheet_link_tag    "application" %>
+      <%= javascript_include_tag "vendor/modernizr" %>
+      <%= csrf_meta_tags %>
 
+      <header>
+            <%=image_tag("shield_L-01.png", width: "400")%>
+      </header>
+
+  </head>
+
+  <body>
+
+      <div class="navbar">
+        <ul class = "home-navbar-links">
+          <li>
+            <% if !signed_in? %>
+              <%= link_to("Login", login_partial_path, class: "Login_Link") %></li>
+            <% end %>
+            <% if signed_in? %>
+              <%= link_to("Logout",logout_path) %>
+            <% end %>
+          </li>
+          <li><a href = "mailto:andrew.mcclellan3@gmail.com">Contact Us</a></li>
+          <li> <%= link_to("Report an Incident", new_event_path, class: "report-event")%></a></li>
+          <li><a href = "">Local Resources</a></li>
+          <li><a class = "navbar-admin-link" href="#" data-reveal-id="myModal">Admin</a></li>
+        </ul>
+      </div>
+
+      <div class = "acknowledgement-container">
+        <h4 class = "submission_received">Submission Received</h4>
+
+        <h4 class = "call911">In the event this is an emergency, please contact 911 immediately</h4>
+
+        <p>We greatly appreciate your willingness to provide us with information that helps our school to maintain a safe learning environment.  Depending on the specificity of your submission, we may use the information to take direct action in preventing violent or abusive behavior from taking place.  Specifics of your submission will also be used in identifying behavorial trends within our school district. </p>
+
+        <p>At no time will the specifics of your submission be made available to the public, or be viewed by anyone other than designated school district administrators and/or local law enforcement (if necessary)</p>
+
+        <div class = "resources-list">
+          <h4>Local Resources</h4>
+          <p>School Principal: 555-555-5555</p>
+          <p>School Counselor: 555-555-5555</p>
+          <p>Police Station: 555-555-5555</p>
+          <p>Suicide HelpLine: 555-555-5555</p>
+        </div>
+
+      </div>
+
+
+
+  <footer>
+    <ul>
+      <li><p>©2014 Team Smashing. Andrew. Ruskin. Anders.</p></li>
+    </ul>
+  </footer>
+
+    <%= javascript_include_tag "application" %>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("visualization", "1", {packages:["corechart"]});
+    </script>
+
+        <div id="myModal" class="reveal-modal" data-reveal>
+            <%=image_tag("OrangeShieldLogo.png", width: "100", :class => "logo")%>
+            <h3>Admin Login</h3>
+            <%= form_tag({:controller => 'sessions', :action => 'create'}, { :class => "admin-login-form"}) do %>
+              <%= label_tag(:username, "Username: ") %>
+              <%= text_field_tag(:username) %>
+              <%= label_tag(:password_digest, "Password: ") %>
+              <%= password_field_tag(:password_digest) %>
+              <p class = "error"><%=session[:error]%></p>
+              <%= submit_tag("login", :class => "admin-login-button")  %>
+            <% end %>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+
+  </body>
 </div>
+</div>
+</html>
+
+
+
+
 
 
 
