@@ -50,7 +50,7 @@ Final Project Repo for ShieldED
 * School admin sees a list of all recent incidents
 * School admin can search all incidents for keywords
 * School admin can tag/untag incidents with appropriate keywords which describe the violence type
-* School admin can view charts which display violence trends/stats
+* School admin can view charts which display violence trends/stats (Using the GoogleCharts API)
 
 ##Instructions For Running The App
 * Open the README.rdoc file
